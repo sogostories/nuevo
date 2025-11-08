@@ -10,7 +10,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, .25);
   border-radius: 12px;
   z-index: 1000;
-  max-width: 650px;
+  max-width: 900px; /*#650px*/
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -133,7 +133,7 @@
   z-index: 1100; /* above dialog(1000)/overlay(999) */
   font-size: .95rem;
 }
-@media (max-width:600px){
+@media (max-width:900px){/*#600px*/
   .dialog-6{
     width:90vw;          /* almost full-width */
     max-width:none;      /* ignore the 650 px cap */
