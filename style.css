@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   cursor: pointer;
 }
-
+     
 .nav-toggle span {
   background: #fff;
   height: 3px;
@@ -43,7 +43,7 @@ body {
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) { #768
   .nav-links {
     display: none;
     flex-direction: column;
