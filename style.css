@@ -58,7 +58,7 @@ body {
     padding: 1rem 0;
   }
   /* widen the modal on small screens */
-@media (max-width:600px){
+@media (max-width:900px){ #600
   .dialog{
     width:90vw;          /* almost full-width */
     max-width:none;      /* ignore the 650 px cap */
