@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+     <header>
+   <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo"><img src="logo.png" alt="" height="50"></div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+
+    <li><a href="index.html">Home</a></li>
+    <!-- <li><a href="library.html">Library</a></li> -->
+    <!-- <li><a href="#">How it Works</a></li> -->
+    <li><a href="aboutus.html">About Us</a></li>
+    <!-- <li><a href="contactus.html">Contact Us</a></li> -->
+      <li><a href="form.html">Feedback</a></li>
+  </ul>
+</nav>
+
+<!-- JavaScript to toggle menu -->
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+  </header>
+
+<div class="form-container">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegc6qu2V8nEEpmgOw62vYyg-kXFjjvbJzNlgd4Y5lDoulHJg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+  <footer>
+    <div class="footer-column">
+      <div class="footer-logo"><img src="logo.png" alt="" height="50"></div>
+      <p class="footer-text">Explore the stories, traditions, and adventures that make Norway unique.</p>
+    </div>
+    <div class="footer-column footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="">Library</a></li> -->
+        <!-- <li><a href="">How it works</a></li> -->
+       
+        <li><a href="aboutus.html">About us</a></li>
+           <li><a href="form.html">Feedback</a></li>
+        <!-- <li><a href="contactus.html">Contact us</a></li> -->
+      </ul>
+    </div>
+    <div class="footer-column"></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norway Culture Site</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="nordmen.css">
+  <link rel="stylesheet" href="style6.css">
+  <link rel="stylesheet" href="style5.css">
+  <link rel="stylesheet" href="style4.css">
+  <link rel="stylesheet" href="style7.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+   <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo"><img src="logo.png" alt="" height="50"></div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+   
+    <li><a href="index.html">Home</a></li>
+    <!-- <li><a href="library.html">Library</a></li> -->
+    <!-- <li><a href="#">How it Works</a></li> -->
+    <li><a href="aboutus.html">About Us</a></li>
+     <li><a href="form.html">Feedback</a></li>
+    <!-- <li><a href="contactus.html">Contact Us</a></li> -->
+  </ul>
+</nav>
+
+<!-- JavaScript to toggle menu -->
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+    <div class="hero">
+      <img src="g1.png" alt="Wedding Scene">
+      <div class="hero-text">
+        <!-- <h1>PARKER & JODY</h1> -->
+        <!-- <p>are getting married</p> -->
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Latest Stories</h2>
+    <div class="cards">
+      <div class="card" onclick="showDialog()"><img src="norway flag.png" alt="Norwegian Flag"><h3>17.mai - Norges nasjonaldag</h3><p>17th may - Norway national day</p></div>
+      <div id="overlay" class="overlay"></div>
+
+<div class="dialog" id="storyDialog">
+  <audio id="storyAudio" src="17 mai n.mp3" preload="metadata"></audio>
+<button class="dialog-close" onclick="closeDialog()">×</button>
+  <p id="storyText">
+    <span>17. mai er Norges nasjonaldag.</span>
+    <span>Det var på denne dagen i 1814 at Norge fikk sin egen grunnlov.</span>
+    <span>Grunnloven ble skrevet på Eidsvoll.</span>
+    <span>På denne tiden var Norge i union med Danmark, men ønsket å bli et fritt land.</span>
+    <span>Ledende menn fra ulike deler av Norge møttes og skrev grunnloven.</span>
+    <span>Norge ble da et selvstendig land.</span>
+    <span>Selvstendigheten varte ikke lenge og Norge gikk inn i en ny union med Sverige i august 1814.</span>
+    <span>Grunnloven fra 1814 var fremdeles gyldig og hjalp Norge til selvstendighet i 1905.</span>
+    <span>I begynnelsen ble 17.mai bare feiret i visse private kretser, før feiringen etter hvert ble utbredt.</span>
+    <span>I dag feirer vi 17. mai med glede og stolthet landet rundt.</span>
+    <span>Folk pynter husene sine med norske flagg og gatene er fulle av mennesker.</span>
+    <span>Barnetoget er en viktig del av 17. mai‑feiringen.</span>
+    <span>Barn fra skoler og barnehager går i tog gjennom byen.</span>
+    <span>De synger sanger og roper hurra.</span>
+    <span>Mange barn har på seg bunader.</span>
+    <span>Bunader er tradisjonelle norske klær.</span>
+    <span>Foreldre, besteforeldre og venner ser på barnetoget og vifter med flagg.</span>
+    <span>Korps spiller musikk i toget.</span>
+    <span>Trommer, fløyter og trompeter lager festlig stemning.</span>
+    <span>Det er også russetog, hvor ungdommer som er ferdige med videregående skole, går i tog.</span>
+    <span>De har på seg røde eller blå klær.</span>
+    <span>Mat er en viktig del av feiringen.</span>
+    <span>Vi spiser pølser, is og kaker.</span>
+    <span>Mange har også frokoster og lunsjer med familie og venner.</span>
+    <span>Bordene er pyntet med flagg og blomster.</span>
+    <span>Det er en dag for å være sammen med dem man er glad i.</span>
+    <span>17. mai er en dag full av glede.</span>
+    <span>Overalt hører man folk rope: "Hipp hipp hurra, hurra, hurra!"</span>
+    <span>Det er en dag for alle i Norge, både store og små.</span>
+    <span>Vi feirer friheten vår og vår stolte historie.</span>
+    <span>17. mai er virkelig en spesiell dag i Norge, en dag vi aldri glemmer.</span>
+  </p>
+
+  <div class="controls">
+    <button class="play-btn"  onclick="playStory()">▶ Play</button>
+    <button class="pause-btn" onclick="pauseStory()">⏸ Pause</button>
+    <button class="vocab-btn" onclick="startVocabMode()">Flash‑Cards</button>
+    <button class="word-btn"  id="wordModeBtn" onclick="toggleWordMode()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard" id="flashcard">
+    <div class="flashcard-content" id="flashcardContent" onclick="revealMeaning()">...</div>
+    <div>
+      <button class="arrow-btn" onclick="prevWord()">⬅</button>
+      <button class="arrow-btn" onclick="nextWord()">➡</button>
+      <button class="flash-exit-btn" onclick="closeFlashcard()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">oversettelse…</div>
+
+
+      <div class="card" onclick="showDialog4()"><img src="king.jpg" alt="Volunteers"><h3>Kong Olav V - En konge av folket</h3><p>King Olav V – A King of the People</p></div>
+     <div id="toast4" class="toast-4"></div>
+
+      <div id="overlay4" class="overlay-4"></div>
+<div class="dialog-4" id="storyDialog4">
+  <audio id="storyAudio4" src="story4.wav" preload="metadata"></audio>
+<button class="dialog-close-4"  onclick="closeDialog4()">×</button>
+  <p id="storyText4">
+<span>Kong Olav V ble født 2. juli 1903 i Storbritannia som prins Alexander Edward Christian Frederik.</span>
+<span>Han flyttet til Norge med familien i 1905 da faren hans, Haakon VII, ble konge av Norge.</span>
+<span>Alexander fikk navnet Olav V da han ble kronprins, og vokste opp i Norge.</span>
+
+<span>Under andre verdenskrig måtte kongefamilien flykte fra Norge da Tyskland invaderte landet i 1940.</span>
+<span>Kongefamilien og regjeringen var i eksil i Storbritannia.</span>
+<span>Mens han var i England, fortsatte Olav V å kjempe for å frigjøre Norge sammen med sin far.</span>
+<span>Han ble en viktig leder og inspirerte mange nordmenn under krigen.</span>
+
+<span>Olav V ble konge i 1957 etter farens død.</span>
+<span>Han var en populær konge som ble kjent som "Folkekongen".</span>
+<span>Hans ydmykhet og nærhet til folket gjorde ham elsket av mange.</span>
+<span>Han var enkel og folkelig, og deltok ofte i vanlige folks liv.</span>
+<span>Han elsket ski og friluftsliv, akkurat som mange nordmenn.</span>
+
+<span>Han er kanskje mest kjent for sin tur med trikken under oljekrisen i 1973.</span>
+<span>Under krisen var det bilfrie dager for å kunne spare bensin, og kongen tok trikken i Oslo som alle andre.</span>
+<span>Han kjøpte billett og satt sammen med vanlige folk.</span>
+<span>Denne hendelsen gjorde ham enda mer populær og viste hans jordnære holdning.</span>
+
+<span>Kong Olav V var en elsket konge som satte stor pris på det norske folket.</span>
+<span>Han døde 17. januar 1991, men er fortsatt husket som “folkekongen”.</span>
+<span>Hans liv og handlinger er en viktig del av norsk historie og kulturarv.</span>
+
+
+  </p>
+
+  <div class="controls-4">
+    <button class="play-btn-4"  onclick="playStory4()">▶ Play</button>
+    <button class="pause-btn-4" onclick="pauseStory4()">⏸ Pause</button>
+    <button class="vocab-btn-4" onclick="startVocabMode4()">Flash‑Cards</button>
+    <button class="word-btn-4"  id="wordModeBtn4" onclick="toggleWordMode4()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-4" id="flashcard4">
+    <div class="flashcard-content-4" id="flashcardContent4" onclick="revealMeaning4()">...</div>
+    <div>
+      <button class="arrow-btn-4" onclick="prevWord4()">⬅</button>
+      <button class="arrow-btn-4" onclick="nextWord4()">➡</button>
+      <button class="flash-exit-btn-4" onclick="closeFlashcard4()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+      
+<div class="toast" id="toast4">oversettelse…</div>
+
+      <div class="card" onclick="showDialog7()"><img src="hike.jpg" alt="House Purchase"><h3>Ut på tur aldri sur - DNT</h3><p>Out on a hike, never in a bad mood.</p></div>
+    <div id="toast7" class="toast-7"></div>
+<div id="overlay7" class="overlay-7"></div>
+
+<div class="dialog-7" id="storyDialog7">
+  <audio id="storyAudio7" src="story7.wav" preload="metadata"></audio>
+<button class="dialog-close-7"  onclick="closeDialog7()">×</button>
+  <p id="storyText7">
+<span>Lina hadde nylig flyttet til Norge og ønsket å forstå hvorfor nordmenn elsker å gå på tur.</span>  
+<span>En venn anbefalte henne å bli med i Den Norske Turistforening (DNT), og hun meldte seg straks inn.</span>  
+<span>Nå var det søndag, og Lina skulle delta på sin første DNT-tur.</span>  
+
+<span>På møteplassen ble Lina møtt av en stor gruppe medlemmer i alle aldre.</span>  
+<span>Turlederne, Kari og Per, ønsket alle velkommen og delte ut kart over ruten.</span>  
+<span>"I dag skal vi gå en lett tur til en av DNTs hytter," sa Kari.</span>  
+<span>"Det blir en flott dag i naturen."</span>  
+
+<span>Lina la merke til hvor organisert alt var.</span>  
+<span>DNT-medlemmer får tilgang til et stort nettverk av merkede stier og over 500 hytter over hele Norge.</span>  
+<span>I tillegg tilbyr DNT mange aktiviteter og turer for medlemmene, fra korte dagsturer til lengre ekspedisjoner.</span>  
+
+<span>På turen begynte Lina å snakke med de andre deltakerne.</span>  
+<span>De fortalte henne om de mange fordelene ved å være DNT-medlem.</span>  
+<span>Ikke bare får man tilgang til fantastiske turmuligheter, men også til fellesskap og vennskap.</span>  
+<span>DNT organiserer mange sosiale aktiviteter, som turer med guide, kurs og familiearrangementer.</span>  
+
+<span>Da gruppen kom frem til hytta, ble Lina imponert over hvor koselig den var.</span>  
+<span>Kari og Per begynte å forberede lunsj, og de andre hjalp til.</span>  
+<span>Alle var glade og takknemlige for å dele denne opplevelsen.</span>  
+<span>Kari fortalte Lina at DNT har over 300 000 medlemmer og er en av Norges største og eldste friluftsorganisasjoner.</span>  
+
+<span>Lina følte seg inkludert og velkommen.</span>  
+<span>Hun innså at DNT ikke bare handlet om å gå på tur, men også om å skape minner og fellesskap.</span>  
+<span>Å være medlem av DNT ga henne muligheten til å oppleve Norges vakre natur på en trygg og hyggelig måte, samtidig som hun fikk nye venner.</span>  
+
+<span>Da turen var over, takket Lina Kari og Per.</span>  
+<span>"Tusen takk for en fantastisk dag," sa hun.</span>  
+<span>"Jeg ser virkelig frem til neste tur med DNT."</span>  
+
+
+
+  </p>
+
+  <div class="controls-7">
+    <button class="play-btn-7"  onclick="playStory7()">▶ Play</button>
+    <button class="pause-btn-7" onclick="pauseStory7()">⏸ Pause</button>
+    <button class="vocab-btn-7" onclick="startVocabMode7()">Flash‑Cards</button>
+    <button class="word-btn-7"  id="wordModeBtn7" onclick="toggleWordMode7()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-7" id="flashcard7">
+    <div class="flashcard-content-7" id="flashcardContent7" onclick="revealMeaning7()">...</div>
+    <div>
+      <button class="arrow-btn-7" onclick="prevWord7()">⬅</button>
+      <button class="arrow-btn-7" onclick="nextWord7()">➡</button>
+      <button class="flash-exit-btn-7" onclick="closeFlashcard7()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+      <div class="toast" id="toast-7">oversettelse…</div>
+
+
+  </section>
+
+  <section class="nature">
+    <img src="second.png" alt="Waterfall">
+    <div class="nature-text">
+      <!-- <h2>Heed the call of nature and <em>leave it all behind.</em></h2>
+      <button>BOOK NOW →</button> -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Recommended for you <a href="#" class="view-all">see all</a></h2>
+    <div class="cards">
+      
+      <div class="card" onclick="showDialog2()"><img src="house.png" alt="Cabin"><h3>HYTTA - et hjem borte fra hjemmet</h3><p>a cabin - a home away from home</p>
+        </div>
+        
+      <div class="dialog-2" id="storyDialog2">
+  <audio id="storyAudio2" src="video2.mp3" preload="metadata"></audio>
+<button class="dialog-close-2"  onclick="closeDialog2()">×</button>
+  <p id="storyText2">
+<span>Hyttekulturen i Norge er en viktig del av det norske livet.</span>
+<span>Mange nordmenn har en hytte, som er et lite hus i naturen.</span>
+<span>Hytter kan være på fjellet, ved sjøen, i skogen eller på øyer.</span>
+<span>Hytter kan være gamle eller nye, store eller små, enkle eller luksuriøse.</span>
+<span>Ordet “hytte” kommer fra det gamle norrøne ordet “hýtti”, som betyr “lite hus”.</span>
+<span>Det første beviset på at nordmenn hadde hytter er fra 1100-tallet.</span>
+<span>Da var hyttene brukt av bønder, jegere og fiskere.</span>
+<span>Senere ble hyttene brukt av kunstnere, forfattere og kongelige.</span>
+<span>I dag har nesten 400 000 nordmenn en hytte.</span>
+<span>Nordmenn liker å dra på hyttetur for å slappe av, kose seg og være ute.</span>
+<span>De drar ofte på hyttetur på fredager, og blir der til søndag.</span>
+<span>Mange nordmenn kaller det for “fredagsturen”.</span>
+<span>På kontoret er det dermed veldig få som kommer på jobb på fredager,</span>
+<span>ellers slutter de fleste nordmenn tidligere, slik at de slipper å stå i kø på vei til hytta.</span>
+<span>De drar også på hyttetur i høytider som påske, jul og 17. mai.</span>
+<span>De drar på hyttetur både sommer og vinter.</span>
+<span>Når nordmenn er på hyttetur, gjør de mange forskjellige aktiviteter.</span>
+<span>De går på tur i naturen, fisker, bader, sykler, spiller spill, leser bøker og lager mat.</span>
+<span>Typisk turmat på hytta er for eksempel kvikklunsj, klementiner, brødskiver med ost og skinke, pølser etc.</span>
+<span>Hyttekulturen i Norge er sentral fordi den viser hvordan nordmenn elsker naturen og familien sin.</span>
+<span>Hytta er et sted der nordmenn kan være seg selv, og ha det gøy sammen.</span>
+<span>Hytta er et symbol på det norske folket og deres verdier.</span>
+<span>I Norge er det mange fjell og vakker natur, så hyttene gir en mulig mulighet til å nyte dette.</span>
+
+  </p>
+
+  <div class="controls-2">
+    <button class="play-btn-2"  onclick="playStory2()">▶ Play</button>
+    <button class="pause-btn-2" onclick="pauseStory2()">⏸ Pause</button>
+    <button class="vocab-btn-2" onclick="startVocabMode2()">Flash‑Cards</button>
+    <button class="word-btn-2"  id="wordModeBtn2" onclick="toggleWordMode2()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-2" id="flashcard2">
+    <div class="flashcard-content-2" id="flashcardContent2" onclick="revealMeaning2()">...</div>
+    <div>
+      <button class="arrow-btn-2" onclick="prevWord2()">⬅</button>
+      <button class="arrow-btn-2" onclick="nextWord2()">➡</button>
+      <button class="flash-exit-btn-2" onclick="closeFlashcard2()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+  <div class="toast" id="toast-2">oversettelse…</div>
+
+
+      <div class="card" onclick="showDialog6()"><img src="paint.png" alt="Brushes"><h3>Edvard Munch</h3><p>(Norwegian painter) - Brushes to illustrate painting</p></div>
+     <div id="toast6" class="toast-6"></div>
+
+      <div id="overlay6" class="overlay-6"></div>
+<div class="dialog-6" id="storyDialog6">
+  <audio id="storyAudio6" src="story3.wav" preload="metadata"></audio>
+<button class="dialog-close-6"  onclick="closeDialog6()">×</button>
+  <p id="storyText6">
+<span>Edvard Munch ble født 12. desember 1863 i Løten, Norge.</span>
+<span>Han vokste opp i en stor familie med fire søsken (Johanne, Peter, Laura og Inger Marie), men livet hans var preget av tragedier.</span>
+<span>Moren hans døde av tuberkulose da han var fem år gammel, og senere døde også hans eldste søster (Johanne) av samme sykdom.</span>
+<span>Selv var Munch ofte syk under oppveksten, og var plaget av kronisk astmatisk bronkitt.</span>
+<span>Dette gjorde at han var mye hjemme, og gikk glipp av skolen.</span>
+<span>Disse triste erfaringene og opplevelsene påvirket Munchs kunst.</span>
+
+<span>Munch begynte å male i ung alder og studerte ved Statens kunstakademi i Kristiania (nå Oslo).</span>
+<span>Han ble en viktig del av kunstnermiljøet der og eksperimenterte med ulike stiler og teknikker.</span>
+<span>Hans kunst var kjent for å uttrykke sterke følelser som angst, kjærlighet og død.</span>
+<span>Munch sa selv at han ønsket å male sjelebilder, bilder som uttrykte menneskets indre liv.</span>
+<span>Dette ser man tydelig i hans verk, og kunsten hans kan sies å være virkelighetsnær.</span>
+
+<span>Et av Munchs mest berømte malerier er "Skrik".</span>
+<span>Det ble laget i 1893 og viser en person som skriker med hendene mot ansiktet, omgitt av en dramatisk rød og oransje himmel.</span>
+<span>Munch beskrev selv hvordan han følte en plutselig angst mens han gikk tur med venner og så en rød solnedgang som føltes som "et uendelig skrik gjennom naturen".</span>
+<span>Maleriet har blitt et symbol på menneskelig angst og eksistensiell uro.</span>
+<span>"Skrik" er et av verdens mest kjente malerier, og finnes i flere versjoner, både i maling, pastell og litografi.</span>
+
+<span>Munchs unike stil og evne til å formidle dype følelser har gjort ham til en av de mest anerkjente kunstnerne i verden.</span>
+<span>Hans kunstverk finnes i museer over hele verden, spesielt på Munch-museet i Oslo.</span>
+
+<span>Edvard Munch døde 23. januar 1944, men hans kunst lever videre.</span>
+<span>Han har hatt stor innflytelse på moderne kunst og er en viktig del av norsk kulturarv.</span>
+
+
+  </p>
+
+  <div class="controls-6">
+    <button class="play-btn-6"  onclick="playStory6()">▶ Play</button>
+    <button class="pause-btn-6" onclick="pauseStory6()">⏸ Pause</button>
+    <button class="vocab-btn-6" onclick="startVocabMode6()">Flash‑Cards</button>
+    <button class="word-btn-6"  id="wordModeBtn6" onclick="toggleWordMode6()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-6" id="flashcard6">
+    <div class="flashcard-content-6" id="flashcardContent6" onclick="revealMeaning6()">...</div>
+    <div>
+      <button class="arrow-btn-6" onclick="prevWord6()">⬅</button>
+      <button class="arrow-btn-6" onclick="nextWord6()">➡</button>
+      <button class="flash-exit-btn-6" onclick="closeFlashcard6()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+
+    <!--Nordmenn er født med ski på beina -->
+
+
+      <div class="card" onclick="showDialog3()"><img src="mountain.png" alt="Skiers"><h3>Nordmenn er født med ski på beina</h3><p>Norwegians are born with skis on their feet</p></div>
+            <div id="overlay3" class="overlay-3"></div>
+             <div id="toast3" class="toast-3"></div>
+<div class="dialog-3" id="storyDialog3">
+  <audio id="storyAudio3" src="story3.wav" preload="metadata"></audio>
+<button class="dialog-close-3"  onclick="closeDialog3()">×</button>
+  <p id="storyText3">
+
+  <span >Norge er kjent for sin sterke skitradisjon, og man hører ofte uttrykket “Nordmenn er født med ski på beina”.</span>
+    <span >Historisk sett har ski vært et viktig fremkomstmiddel i Norge.</span>
+    <span >Helleristningen “Bølamannen” i Trondheimsfjorden er ca 6000 år gammel og viser en mann på ski.</span>
+    <span >For å komme seg frem i den tøffe norske villmarka med skog og innsjøer, ble skiene brukt som praktiske hjelpemidler for jakt, transport og overlevelse.</span>
+    <span >De første skiene var laget av tre, og hadde en enkel form - lange, smale planker med opphøyde tupper.</span>
+    <span >Skigåing har dermed vært en del av den norske kulturarven lenge før moderne skianlegg og preppede løyper.</span>
+
+    <span >På 1800-tallet begynte ski å bli brukt som en sport i Norge.</span>
+    <span >Siden den gang har skisporten utviklet seg mye, og Norge har definitivt blitt en av verdens ledende nasjoner i skisporet.</span>
+    <span >Norge har vunnet mange medaljer i internasjonale konkurranser som VM og OL.</span>
+    <span >Det har også gjort at skisporten har blitt så populær.</span>
+
+    <span >Det er ikke bare på grunn av gullmedaljene at skisport har blitt populært.</span>
+    <span >Det skyldes også at Norge har et variert og vakkert vinterlandskap.</span>
+    <span >I dag er det typisk å se nordmenn i fjellene.</span>
+    <span >Mange tilbringer helger og ferier på fjellet for å gå på ski.</span>
+    <span >I tillegg kan det sies at nordmenn har en sterk tradisjon for å bruke naturen til rekreasjon, og ski er dermed en perfekt måte å gjøre dette på vinterstid.</span>
+
+    <span >Skisporten er for alle, både barn og voksne, mosjonister og vanlige turgåere.</span>
+    <span >Det er vanlig å gå på ski sammen med familien, og deretter nyte en pause med en kopp varm kakao.</span>
+    <span >Barn lærer også i tidlig alder å stå på ski gjennom skidager på skolen.</span>
+    <span >Bare husk å ikke gå på beina i skisporet, da kan skigåere bli sinte.</span>
+
+    <span >Men, er nordmenn virkelig født med ski på beina?</span>
+    <span >Selv om dette er en morsom klisjé, så er nordmenn ikke bokstavelig talt født med ski på beina.</span>
+    <span >Noen elsker det, mens andre helst ønsker å være på en strand i syden når vinteren kommer.</span>
+    <span >Det som er helt sikkert er at ski er en viktig del av norsk identitet og kultur, og at som skinasjon har Norge en dyp kjærlighet til snø, natur og fellesskap.</span>
+    <span >Skigleden varer hele livet.</span>
+
+  </p>
+
+  <div class="controls-3">
+    <button class="play-btn-3"  onclick="playStory3()">▶ Play</button>
+    <button class="pause-btn-3" onclick="pauseStory3()">⏸ Pause</button>
+    <button class="vocab-btn-3" onclick="startVocabMode3()">Flash‑Cards</button>
+    <button class="word-btn-3"  id="wordModeBtn3" onclick="toggleWordMode3()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-3" id="flashcard3">
+    <div class="flashcard-content-3" id="flashcardContent3" onclick="revealMeaning3()">...</div>
+    <div>
+      <button class="arrow-btn-3" onclick="prevWord3()">⬅</button>
+      <button class="arrow-btn-3" onclick="nextWord3()">➡</button>
+      <button class="flash-exit-btn-3" onclick="closeFlashcard3()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+
+    
+       <div class="card" onclick="showDialog5()"><img src="insudtry.png" alt="Oil Rig"><h3>Det norske oljeeventyret</h3><p>The Norwegian oil fairytale</p></div>
+     <div id="toast5" class="toast-5"></div>
+      
+        <div id="overlay5" class="overlay-5"></div>
+<div class="dialog-5" id="storyDialog5">
+  <audio id="storyAudio5" src="oljeeventyret.wav" preload="metadata"></audio>
+<button class="dialog-close-5"  onclick="closeDialog5()">×</button>
+  <p id="storyText5">
+
+<span>Oljen som forandret Norge:</span>
+
+<span>Pavlo bor i Stavanger.</span>
+<span>Han kom til Norge for ett år siden og jobber nå på et verft.</span>
+<span>Der bygger de deler til oljeplattformer.</span>
+<span>Han liker jobben sin, men han lurer på noe.</span>
+
+<span>En dag i lunsjen spør han kollegaen sin, Lars:</span>
+<span>«Hvorfor er olje så viktig i Norge?»</span>
+
+<span>Lars smiler.</span>
+<span>«Det er en lang historie,» sier han.</span>
+<span>«Det startet på lille julaften i 1969.»</span>
+
+<span>Lille julaften 1969</span>
+<span>Det er 23. desember 1969.</span>
+<span>Folk i Norge gjør seg klare til jul.</span>
+<span>De pynter juletreet og lager mat, men i Stavanger skjer det noe stort.</span>
+<span>Et amerikansk selskap, Phillips Petroleum, har lett etter olje i Nordsjøen.</span>
+<span>Og nå fant de den!</span>
+
+<span>Det nye oljefeltet heter Ekofisk.</span>
+<span>Det er et av de største i verden.</span>
+<span>Nå forstår Norge at landet har mye olje.</span>
+<span>Dette forandrer alt.</span>
+
+<span>Fra fisk til olje</span>
+<span>Før Norge fant olje, var det et fattig land.</span>
+<span>Mange jobbet med fiske og skipsfart.</span>
+<span>Noen flyttet til USA for å finne arbeid.</span>
+
+<span>Men etter 1969 begynte oljearbeidet.</span>
+<span>Staten lagde et norsk oljeselskap – Statoil.</span>
+<span>Mange nye jobber ble skapt.</span>
+<span>Spesielt i Stavanger.</span>
+<span>Byen blir kalt "oljebyen".</span>
+
+<span>«Så oljen gjorde Norge rikt?» spør Pavlo.</span>
+<span>«Ja,» sier Lars.</span>
+<span>«Men Norge ville bruke pengene på en smart måte.»</span>
+
+<span>Oljefondet – penger for framtiden</span>
+<span>I 1990 lagde staten Oljefondet.</span>
+<span>Norge sparer oljepenger for framtiden.</span>
+<span>I dag er fondet et av de største i verden!</span>
+<span>Pengene brukes på skoler, sykehus og pensjoner.</span>
+
+<span>Men oljen varer ikke evig.</span>
+<span>En dag vil den ta slutt.</span>
+
+<span>Hva skjer i framtiden?</span>
+<span>Pavlo ser ut av vinduet.</span>
+<span>Ute ligger havet, der oljen kommer fra.</span>
+<span>«Hva skjer når Norge ikke har mer olje?» spør han.</span>
+
+<span>Lars tenker litt.</span>
+<span>«Vi må finne andre løsninger,» sier han.</span>
+<span>«Vindkraft, solenergi … Kanskje du og jeg skal jobbe med det i framtiden?»</span>
+
+<span>Pavlo smiler.</span>
+<span>«Kanskje det!»</span>
+
+
+  </p>
+
+  <div class="controls-5">
+    <button class="play-btn-5"  onclick="playStory5()">▶ Play</button>
+    <button class="pause-btn-5" onclick="pauseStory5()">⏸ Pause</button>
+    <button class="vocab-btn-5" onclick="startVocabMode5()">Flash‑Cards</button>
+    <button class="word-btn-5"  id="wordModeBtn5" onclick="toggleWordMode5()">Word Translation Mode</button>
+  </div>
+
+  <div class="flashcard-5" id="flashcard5">
+    <div class="flashcard-content-5" id="flashcardContent5" onclick="revealMeaning5()">...</div>
+    <div>
+      <button class="arrow-btn-5" onclick="prevWord5()">⬅</button>
+      <button class="arrow-btn-5" onclick="nextWord5()">➡</button>
+      <button class="flash-exit-btn-5" onclick="closeFlashcard5()">✖ Close</button>
+
+    </div>
+  </div>
+</div>
+   
+<div id="toast2" class="toast-2"></div>
+  <div id="overlay2" class="overlay-2"></div>
+  
+
+
+
+  </section>
+
+  <section class="section">
+    <h2>Categories <a href="#" class="view-all">view all</a></h2>
+    <div class="cards">
+   
+
+      
+      <div class="card"><img src="easter.png" alt="Easter"><h3>Norske påsketradisjoner</h3><p>Norwegian easter traditions</p></div>
+      <div class="card"><img src="beach.png" alt="Granka Beach"><h3>Granka - Det norske paradiset Granka</h3><p>The Norwegian paradise</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-column">
+      <div class="footer-logo"><img src="logo.png" alt="" height="50"></div>
+      <p class="footer-text">Explore the stories, traditions, and adventures that make Norway unique.</p>
+    </div>
+    <div class="footer-column footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="">Library</a></li> -->
+        <!-- <li><a href="">How it works</a></li> -->
+        <li><a href="aboutus.html">About us</a></li>
+            <li><a href="form.html">Feedback</a></li>
+        <!-- <li><a href="contactus.html">Contact us</a></li> -->
+      </ul>
+    </div>
+    <div class="footer-column"></div>
+  </footer>
+</body>
+</html>
+
+<script src="script.js"></script>
+<script src="story3.js"></script>
+<script src="script2.js"></script>
+<script src="script4.js"></script>
+<script src="script6.js"></script>
+<script src="script5.js"></script>
+<script src="script7.js"></script>
+</body>
+</html>

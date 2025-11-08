@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>Elope - About Us</title>
+   <link rel="stylesheet" href="aboutus.css">
+   
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <!-- Navbar -->
+     <nav class="navbar">
+  <div class="logo"><img src="logo.png" alt="" height="50"></div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    
+    <li><a href="index.html">Home</a></li>
+    <!-- <li><a href="library.html">Library</a></li> -->
+    <!-- <li><a href="#">How it Works</a></li> -->
+    <li><a href="aboutus.html">About Us</a></li>
+    <li><a href="form.html">Feedback</a></li>
+    <!-- <li><a href="c">Contact Us</a></li> -->
+  </ul>
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Us</h1>
+    <!-- <p>American fragrance that inspires the soul to escape.</p> -->
+    
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <div class="about-content">
+      <img src="aboutus.jpeg" alt="Mountain lake">
+      <div class="about-text">
+        <h3>Peter and Miguel</h3>
+        <p>
+          We’re Peter and Miguel — two language enthusiasts on a mission to make learning Norwegian more natural, more engaging, and more fun.
+That’s why we created Stories on the Go (SOGO) — a fresh, story-based platform designed for A2–B2 learners who want to explore real-life stories from Norway while improving their language skills.
+        </p>
+        <p>
+         With SOGO, you can read and listen at the same time, get instant English translations (for now), word by word or sentence by sentence, and hear authentic pronunciation from a real Norwegian teacher — not a robot.
+        </p>
+        <p>
+It’s a different way to learn: simple, flexible, and human — built to fit into your life in just 15–30 minutes a day.        </p>
+     <p>Most learners struggle to find content that’s both useful and motivating.
+We’re here to change that — one story at a time.</p>
+</div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-column">
+      <div class="footer-logo"><img src="logo.png" alt="" height="50"></div>
+      <p class="footer-text">Explore the stories, traditions, and adventures that make Norway unique.</p>
+    </div>
+    <div class="footer-column footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="#">Library</a></li> -->
+        <!-- <li><a href="#">How it works</a></li> -->
+        <li><a href="aboutus.html">About us</a></li>
+        <!-- <li><a href="contactus.html">Contact us</a></li> -->
+          <li><a href="form.html">Feedback</a></li>
+      </ul>
+
+    </div>
+    <div class="footer-column"></div>
+  </footer>
+</body>
+</html>

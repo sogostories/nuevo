@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contactus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo"><img src="logo.png" alt="" height="50"></div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="form.html">Feedback</a></li>
+    <li><a href="index.html">Home</a></li>
+    <!-- <li><a href="library.html">Library</a></li> -->
+    <li><a href="#">How it Works</a></li>
+    <li><a href="aboutus.html">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+<!-- JavaScript to toggle menu -->
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+<div id="contact1"><h1>Contact Us</h1></div>
+<div id="contact2"><h1>We're growing- with your help</h1></div>
+<div><p>Let's build the future of language learning together</p></div>
+
+<div class="container">
+  <div class="box box1">
+    <div class="timeline">
+  <div class="timeline-item">
+    <div class="icon">
+      <img src="icon1.png" alt="Step 1">
+    </div>
+    <div class="text">Creative Partners</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="icon">
+      <img src="icon2.png" alt="Step 2">
+    </div>
+    <div class="text">Language Educators</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="icon">
+      <img src="icon3.png" alt="Step 3">
+    </div>
+    <div class="text">User feedback</div>
+  </div>
+</div>
+
+</div>
+ 
+<form name="contactus" method="POST" data-netlify="true"  action="/thankyou.html">
+  <input type="hidden" name="form-name" value="contactus">
+  
+  <label>Your Name:</label>
+  <input type="text" name="name" required>
+
+  <label>Your Email:</label>
+  <input type="email" name="email" required>
+
+  <label>Message:</label>
+  <textarea name="message" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
+</div>
+</div>
+<footer>
+    <div class="footer-column">
+      <div class="footer-logo"><img src="logo.png" alt="" height="50"></div>
+      <p class="footer-text">Explore the stories, traditions, and adventures that make Norway unique.</p>
+    </div>
+    <div class="footer-column footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="#">Library</a></li> -->
+        <li><a href="#">How it works</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-column"></div>
+  </footer>
+</body>
+</html>

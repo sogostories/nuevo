@@ -1,0 +1,139 @@
+/* ////////////////////// STORY 2 /////////////////////// */
+.dialog-3{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  border-radius: 12px;
+  z-index: 1000;
+  max-width: 650px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.controls-3 button,
+.vocab-btn-3,
+.word-btn-3 {
+  margin: .5rem;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.play-btn-3 {
+  background: #28a745;
+  color: #fff;
+}
+
+.pause-btn-3 {
+  background: #dc3545;
+  color: #fff;
+}
+
+.vocab-btn-3 {
+  background: #ffc107;
+  color: #000;
+}
+
+.word-btn-3 {
+  background: #17a2b8;
+  color: #fff;
+}
+
+.overlay-3 {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+}
+
+.flashcard-3 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.flashcard-content-3 {
+  background: #fff3cd;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+
+.arrow-btn-3 {
+  font-size: 1.2rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: .4rem .8rem;
+  margin: 0 .5rem;
+  cursor: pointer;
+}
+
+.dialog-close-3 {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+}
+
+.dialog-close-3:hover {
+  color: #000;
+}
+
+.flash-exit-btn-3 {
+  margin-top: .8rem;
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  padding: .4rem .9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.flash-exit-btn-3:hover {
+  background: #5a6268;
+}
+#storyText3 .highlight {
+  background: #fff3cd; /* soft yellow */
+  transition: background .2s ease;
+}
+@media (max-width:600px){
+  .dialog-3{
+    width:90vw;          /* almost full-width */
+    max-width:none;      /* ignore the 650 px cap */
+  }
+}
+/* Floating translation toast */
+.toast-3 {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.85);
+  color: #fff;
+  padding: .7rem 1rem;
+  border-radius: 8px;
+  max-width: 85%;
+  text-align: center;
+  z-index: 1100; /* above dialog(1000)/overlay(999) */
+  font-size: .95rem;
+}
