@@ -1,7 +1,5 @@
-
-
 const translations4 = [
-  "Kong Olav V ble født 2. juli 1903 i Storbritannia som prins Alexander Edward Christian Frederik.",
+"Kong Olav V ble født 2. juli 1903 i Storbritannia som prins Alexander Edward Christian Frederik.",
 "Han flyttet til Norge med familien i 1905 da faren hans, Haakon VII, ble konge av Norge.",
 "Alexander fikk navnet Olav V da han ble kronprins, og vokste opp i Norge.",
 
@@ -24,16 +22,11 @@ const translations4 = [
 "Kong Olav V var en elsket konge som satte stor pris på det norske folket.",
 "Han døde 17. januar 1991, men er fortsatt husket som “folkekongen”.",
 "Hans liv og handlinger er en viktig del av norsk historie og kulturarv."
-
 ];
 
-
-
-const startTimes4=[5,9,15,19,29,36,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
+const startTimes4=[20,30,38,50,55,64,71,78,84,89,95,101,109,118, 122, 130, 135, 143];
 const vocabulary4 = [
   
-
-
   /* Kong Olav V */
 { word: 'Kong',               translation: 'King' },
 { word: 'Olav',               translation: 'Olav' },
@@ -129,8 +122,6 @@ const vocabulary4 = [
 
 // ... (continues with the rest of the text about war, becoming king, oil crisis, trikken, "folkekongen", and death in 1991)
 
-
-
 ];
 
 /**************  DOM  ****************/ 
@@ -151,7 +142,7 @@ function clearHighlight4() {
 function handleTimeUpdate4() {
   if (wordMode4) return; // ignore in word mode
   const cur = audio4.currentTime;
-  const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes2[i + 1]));
+  const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes4[i + 1]));
   if (idx !== -1 && idx !== readingIndex4) {
     clearHighlight4();
     segments4[idx].classList.add('highlight');
