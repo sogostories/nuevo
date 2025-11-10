@@ -13,56 +13,47 @@
   max-width: 900px;/* /650*/
   max-height: 80vh;
   overflow-y: auto;
-}
-
-
-.controls-2 button,
-.vocab-btn-2,
-.word-btn-2 {
+  }
+  .controls-2 button,
+  .vocab-btn-2,
+  .word-btn-2 {
   margin: .5rem;
   padding: .5rem 1rem;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.play-btn-2 {
+  }
+  .play-btn-2 {
   background: #28a745;
   color: #fff;
-}
-
-.pause-btn-2 {
+  }
+  .pause-btn-2 {
   background: #dc3545;
   color: #fff;
-}
-
-.vocab-btn-2 {
+  }
+  .vocab-btn-2 {
   background: #ffc107;
   color: #000;
-}
-
-.word-btn-2 {
+  }
+  .word-btn-2 {
   background: #17a2b8;
   color: #fff;
-}
-
-.overlay-2 {
+  }
+  .overlay-2 {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, .6);
   z-index: 999;
-}
-
-.flashcard-2 {
+  }
+  .flashcard-2 {
   display: none;
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
-}
-
-.flashcard-content-2 {
+  }
+  .flashcard-content-2 {
   background: #fff3cd;
   padding: 1rem 2rem;
   margin: 1rem;
@@ -70,9 +61,8 @@
   cursor: pointer;
   min-width: 200px;
   text-align: center;
-}
-
-.arrow-btn-2 {
+  }
+  .arrow-btn-2 {
   font-size: 1.2rem;
   background: #007bff;
   color: #fff;
@@ -81,9 +71,8 @@
   padding: .4rem .8rem;
   margin: 0 .5rem;
   cursor: pointer;
-}
-
-.dialog-close-2 {
+  }
+  .dialog-close-2 {
   position: absolute;
   top: 8px;
   right: 12px;
@@ -93,13 +82,11 @@
   line-height: 1;
   cursor: pointer;
   color: #888;
-}
-
-.dialog-close-2:hover {
+  }
+  .dialog-close-2:hover {
   color: #000;
-}
-
-.flash-exit-btn-2 {
+  }
+  .flash-exit-btn-2 {
   margin-top: .8rem;
   background: #6c757d;
   color: #fff;
@@ -107,12 +94,11 @@
   padding: .4rem .9rem;
   border-radius: 6px;
   cursor: pointer;
-}
-
-.flash-exit-btn-2:hover {
+  }
+  .flash-exit-btn-2:hover {
   background: #5a6268;
-}
-.toast-2 {
+  }
+  .toast-2 {
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -126,15 +112,14 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-}
-
-.toast-2.show{
+  }
+  .toast-2.show{
   opacity: 1;
   pointer-events: auto;
-}
-@media (max-width:900px){ /*#600px*/
-  .dialog-2{
-    width:90vw;          /* almost full-width */
-    max-width:none;      /* ignore the 650 px cap */
   }
-}
+  @media (max-width:900px){ /*#600px*/
+  .dialog-2{
+  width:90vw; /* almost full-width */
+  max-width:none; /* ignore the 650 px cap */
+    }
+  }
