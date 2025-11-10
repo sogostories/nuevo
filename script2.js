@@ -24,7 +24,7 @@ const translations4 = [
 "Hans liv og handlinger er en viktig del av norsk historie og kulturarv."
 ];
 
-const startTimes4=[8, 19,30,39,49,55,64,71,77,83,89,95,100,109,118, 130, 135, 142,149];
+const startTimes4=[7, 19,30,38,48,54,63,70,76,82,88,95,100,108,118,122, 129, 135, 142,149];
 const vocabulary4 = [
   
   /* Kong Olav V */
