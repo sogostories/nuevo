@@ -123,160 +123,184 @@ const vocabulary4 = [
 // ... (continues with the rest of the text about war, becoming king, oil crisis, trikken, "folkekongen", and death in 1991)
 
 ];
-/************** DOM ****************/
+/**************  DOM  ****************/ 
 const segments4 = Array.from(document.querySelectorAll('#storyText4 span'));
 const toast4 = document.getElementById('toast4');
 const audio4 = document.getElementById('storyAudio4');
 const wordBtn4 = document.getElementById('wordModeBtn4');
-/************** STATE ****************/
+
+/**************  STATE  ****************/ 
 let readingIndex4=0;
 let wordMode4=false;
-/************** AUDIO PLAYBACK (variable2) ****************/
+
+/**************  AUDIO PLAYBACK (variable2)  ****************/ 
 function clearHighlight4() {
-segments4.forEach(s => s.classList.remove('highlight'));
+  segments4.forEach(s => s.classList.remove('highlight'));
 }
+
 function handleTimeUpdate4() {
-if (wordMode4) return; // ignore in word mode
-const cur = audio4.currentTime;
-const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes4[i + 1]));
-if (idx !== -1 && idx !== readingIndex4) {
-clearHighlight4();
-segments4[idx].classList.add('highlight');
-toast4.textContent = translations4[idx];
-toast4.style.display = 'block';
-readingIndex4 = idx;
-  }
+  if (wordMode4) return; // ignore in word mode
+  const cur = audio4.currentTime;
+  const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes2[i + 1]));
+  if (idx !== -1 && idx !== readingIndex4) {
+    clearHighlight4();
+    segments4[idx].classList.add('highlight');
+    toast4.textContent = translations4[idx];
+    toast4.style.display = 'block';
+    readingIndex4 = idx;
+  }
 }
 audio4.addEventListener('timeupdate', handleTimeUpdate4);
 audio4.addEventListener('ended', () => {
-clearHighlight4();
-toast4.style.display = 'none';
-readingIndex4 = 0;
+  clearHighlight4();
+  toast4.style.display = 'none';
+  readingIndex4 = 0;
 });
+
 function playStory4() {
-exitWordMode4(); // exit word mode if active
-audio4.currentTime = startTimes4[readingIndex4];
-audio4.play();
-highlightCurrentSentence4(); // manually highlight on play
+  exitWordMode4(); // exit word mode if active
+  audio4.currentTime = startTimes4[readingIndex4];
+  audio4.play();
+  highlightCurrentSentence4(); // manually highlight on play
 }
 function highlightCurrentSentence4() {
-clearHighlight4();
-segments4[readingIndex4].classList.add('highlight');
-toast4.textContent = translations4[readingIndex4];
-toast4.style.display = 'block';
+  clearHighlight4();
+  segments4[readingIndex4].classList.add('highlight');
+  toast4.textContent = translations4[readingIndex4];
+  toast4.style.display = 'block';
 }
+
 function pauseStory4() {
-audio4.pause();
-toast4.style.display = 'none';
-clearHighlight4();
+  audio4.pause();
+  toast4.style.display = 'none';
+  clearHighlight4();
 }
-/************** SEGMENT CLICK – sentence playback (story2) ****************/
+/**************  SEGMENT CLICK – sentence playback (story2) ****************/
 segments4.forEach((segment, idx) => {
-segment.style.cursor = 'pointer';
-segment.addEventListener('click', () => {
-readingIndex4 = idx;
-audio4.currentTime = startTimes4[idx];
-// Highlight immediately on click
-clearHighlight4();
-segments4[idx].classList.add('highlight');
-// Show translation immediately
-toast4.textContent = translations4[idx];
-toast4.style.display = 'block';
-playStory4();
-  });
+  segment.style.cursor = 'pointer';
+  segment.addEventListener('click', () => {
+    readingIndex4 = idx;
+    audio4.currentTime = startTimes4[idx];
+
+    // Highlight immediately on click
+    clearHighlight4();
+    segments4[idx].classList.add('highlight');
+
+    // Show translation immediately
+    toast4.textContent = translations4[idx];
+    toast4.style.display = 'block';
+
+    playStory4();
+  });
 });
 function toggleWordMode4() {
-wordMode4 ? exitWordMode4() : enterWordMode4();
+  wordMode4 ? exitWordMode4() : enterWordMode4();
 }
+
 function enterWordMode4() {
-wordMode4 = true;
-wordBtn4.textContent = 'Exit Word Mode';
-pauseStory4();
-toast4.style.display = 'none';
-// wrap every word in each sentence with span.word
-segments4.forEach(seg => {
-const words = seg.textContent.split(/(\s+)/); // keep spaces
-seg.innerHTML = words.map(w => /\s+/.test(w) ? w : <span class='word'>${w}</span>).join('');
-seg.querySelectorAll('span.word').forEach(wspan => {
-wspan.style.cursor = 'pointer';
-wspan.addEventListener('click', wordClickHandler4);
-    });
-  });
+  wordMode4 = true;
+  wordBtn4.textContent = 'Exit Word Mode';
+  pauseStory4();
+  toast4.style.display = 'none';
+
+  // wrap every word in each sentence with span.word
+  segments4.forEach(seg => {
+    const words = seg.textContent.split(/(\s+)/); // keep spaces
+    seg.innerHTML = words.map(w => /\s+/.test(w) ? w : `<span class='word'>${w}</span>`).join('');
+    seg.querySelectorAll('span.word').forEach(wspan => {
+      wspan.style.cursor = 'pointer';
+      wspan.addEventListener('click', wordClickHandler4);
+    });
+  });
 }
 function exitWordMode4() {
-if (!wordMode4) return;
-wordMode4 = false;
-wordBtn4.textContent = 'Word Translation Mode';
-toast4.style.display = 'none';
-// restore original text (remove inner spans)
-segments4.forEach((seg, i) => {
-seg.textContent = seg.innerText;
-  });
-clearHighlight4();
+  if (!wordMode4) return;
+  wordMode4 = false;
+  wordBtn4.textContent = 'Word Translation Mode';
+  toast4.style.display = 'none';
+
+  // restore original text (remove inner spans)
+  segments4.forEach((seg, i) => {
+    seg.textContent = seg.innerText;
+  });
+
+  clearHighlight4();
 }
 function wordClickHandler4(e) {
-e.stopPropagation();
-clearHighlight4();
-const span = e.target;
-span.classList.add('highlight');
-// Clean the word and look up in vocabulary4
-const clean = span.textContent.toLowerCase().replace(/[^a-zæøåA-ZÆØÅ]/g, '');
-const entry = vocabulary4.find(v => v.word.toLowerCase() === clean);
-toast4.textContent = entry ? ${entry.word} = ${entry.translation} : 'Translation not available';
-toast4.style.display = 'block';
-// ▶️ Play the sentence that contains the clicked word
-const parentSegment = span.closest('span');
-const idx = segments4.indexOf(parentSegment);
-if (idx !== -1) {
-readingIndex4 = idx;
-audio4.currentTime = startTimes4[idx];
-audio4.play();
-  }
+  e.stopPropagation();
+  clearHighlight4();
+
+  const span = e.target;
+  span.classList.add('highlight');
+
+  // Clean the word and look up in vocabulary4
+  const clean = span.textContent.toLowerCase().replace(/[^a-zæøåA-ZÆØÅ]/g, '');
+  const entry = vocabulary4.find(v => v.word.toLowerCase() === clean);
+  toast4.textContent = entry ? `${entry.word} = ${entry.translation}` : 'Translation not available';
+  toast4.style.display = 'block';
+
+  // ▶️ Play the sentence that contains the clicked word
+  const parentSegment = span.closest('span');
+  const idx = segments4.indexOf(parentSegment);
+  if (idx !== -1) {
+    readingIndex4 = idx;
+    audio4.currentTime = startTimes4[idx];
+    audio4.play();
+  }
 }
-/************** FLASH‑CARD MODE – STORY 4 ****************/
+/**************  FLASH‑CARD MODE – STORY 4 ****************/
 const flashcard4 = document.getElementById('flashcard4');
 const flashcardContent4 = document.getElementById('flashcardContent4');
 let currentWordIdx4 = 0;
+
 function startVocabMode4() {
-exitWordMode4(); // Make sure word mode is off
-flashcard4.style.display = 'flex';
-currentWordIdx4 = 0;
-updateFlashcard4();
+  exitWordMode4(); // Make sure word mode is off
+  flashcard4.style.display = 'flex';
+  currentWordIdx4 = 0;
+  updateFlashcard4();
 }
+
 function updateFlashcard4() {
-flashcardContent4.textContent = vocabulary4[currentWordIdx4].word;
-flashcardContent4.dataset.side = 'word';
+  flashcardContent4.textContent = vocabulary4[currentWordIdx4].word;
+  flashcardContent4.dataset.side = 'word';
 }
+
 function revealMeaning4() {
-if (flashcardContent4.dataset.side === 'word') {
-flashcardContent4.textContent = vocabulary4[currentWordIdx4].translation;
-flashcardContent4.dataset.side = 'translation';
-  } else {
-updateFlashcard4();
-  }
+  if (flashcardContent4.dataset.side === 'word') {
+    flashcardContent4.textContent = vocabulary4[currentWordIdx4].translation;
+    flashcardContent4.dataset.side = 'translation';
+  } else {
+    updateFlashcard4();
+  }
 }
+
 function nextWord4() {
-currentWordIdx4 = (currentWordIdx4 + 1) % vocabulary4.length;
-updateFlashcard4();
+  currentWordIdx4 = (currentWordIdx4 + 1) % vocabulary4.length;
+  updateFlashcard4();
 }
+
 function prevWord4() {
-currentWordIdx4 = (currentWordIdx4 - 1 + vocabulary4.length) % vocabulary4.length;
-updateFlashcard4();
+  currentWordIdx4 = (currentWordIdx4 - 1 + vocabulary4.length) % vocabulary4.length;
+  updateFlashcard4();
 }
+
 function closeFlashcard4() {
-flashcard4.style.display = 'none';
+  flashcard4.style.display = 'none';
 }
-/************** MODAL – STORY2 ****************/
+
+/**************  MODAL – STORY2 ****************/
 function showDialog4() {
-document.getElementById('overlay4').style.display = 'block';
-document.getElementById('storyDialog4').style.display = 'block';
+  document.getElementById('overlay4').style.display = 'block';
+  document.getElementById('storyDialog4').style.display = 'block';
 }
+
 function closeDialog4() {
-pauseStory4(); // stop audio & highlight
-exitWordMode4(); // reset word mode
-flashcard4.style.display = 'none';
-document.getElementById('overlay4').style.display = 'none';
-document.getElementById('storyDialog4').style.display = 'none';
+  pauseStory4();             // stop audio & highlight
+  exitWordMode4();           // reset word mode
+  flashcard4.style.display = 'none';
+  document.getElementById('overlay4').style.display = 'none';
+  document.getElementById('storyDialog4').style.display = 'none';
 }
+
 // Close modal on backdrop click
 document.getElementById('overlay4').addEventListener('click', closeDialog4);
