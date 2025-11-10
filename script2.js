@@ -1,30 +1,30 @@
 const translations4 = [
-"Kong Olav V ble født 2. juli 1903 i Storbritannia som prins Alexander Edward Christian Frederik.",
-"Han flyttet til Norge med familien i 1905 da faren hans, Haakon VII, ble konge av Norge.",
-"Alexander fikk navnet Olav V da han ble kronprins, og vokste opp i Norge.",
+"King Olav V was born on July 2, 1903, in Great Britain as Prince Alexander Edward Christian Frederik.", 
+"He moved to Norway with his family in 1905 when his father, Haakon VII, became king of Norway.", 
+"Alexander was given the name Olav V when he became crown prince, and he grew up in Norway.", 
 
-"Under andre verdenskrig måtte kongefamilien flykte fra Norge da Tyskland invaderte landet i 1940.",
-"Kongefamilien og regjeringen var i eksil i Storbritannia.",
-"Mens han var i England, fortsatte Olav V å kjempe for å frigjøre Norge sammen med sin far.",
-"Han ble en viktig leder og inspirerte mange nordmenn under krigen.",
+"During World War II, the royal family had to flee from Norway when Germany invaded the country in 1940.", 
+"The royal family and the government were in exile in Great Britain.", 
+"While in England, Olav V continued to fight for the liberation of Norway together with his father.", 
+"He became an important leader and inspired many Norwegians during the war.", 
 
-"Olav V ble konge i 1957 etter farens død.",
-"Han var en populær konge som ble kjent som \"Folkekongen\".",
-"Hans ydmykhet og nærhet til folket gjorde ham elsket av mange.",
-"Han var enkel og folkelig, og deltok ofte i vanlige folks liv.",
-"Han elsket ski og friluftsliv, akkurat som mange nordmenn.",
+"Olav V became king in 1957 after his father's death.", 
+"He was a popular king who became known as the People's King.", 
+"His humility and closeness to the people made him beloved by many.", 
+"He was simple and down-to-earth, and often participated in the lives of ordinary people.", 
+"He loved skiing and outdoor life, just like many Norwegians.",
 
-"Han er kanskje mest kjent for sin tur med trikken under oljekrisen i 1973.",
-"Under krisen var det bilfrie dager for å kunne spare bensin, og kongen tok trikken i Oslo som alle andre.",
-"Han kjøpte billett og satt sammen med vanlige folk.",
-"Denne hendelsen gjorde ham enda mer populær og viste hans jordnære holdning.",
+"He is perhaps best known for his tram ride during the oil crisis in 1973.", 
+"During the crisis, there were car-free days to save gasoline, and the king took the tram in Oslo like everyone else.", 
+"He bought a ticket and sat among ordinary people.", 
+"This incident made him even more popular and showed his grounded attitude.", 
 
-"Kong Olav V var en elsket konge som satte stor pris på det norske folket.",
-"Han døde 17. januar 1991, men er fortsatt husket som “folkekongen”.",
-"Hans liv og handlinger er en viktig del av norsk historie og kulturarv."
+"King Olav V was a beloved king who greatly appreciated the Norwegian people.", 
+"He died on January 17, 1991, but is still remembered as the “People's King.”", 
+"His life and actions are an important part of Norwegian history and cultural heritage."
 ];
 
-const startTimes4=[4, 19,30,38,48,54,63,70,76,82,88,95,100,108,118,122, 129, 135, 142,149];
+const startTimes4=[2, 19,30,38,48,54,63,70,76,82,88,95,100,108,118,122, 129, 135, 142,149];
 const vocabulary4 = [
   
   /* Kong Olav V */

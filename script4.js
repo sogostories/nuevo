@@ -1,9 +1,8 @@
 
-
 const translations2 = [
-  "The cabin culture in Norway is an important part of Norwegian life.",
-  "Many Norwegians have a cabin, which is a small house in nature.",
-  "Cabins can be in the mountains, by the sea, in the forest, or on islands.",
+  "A cabin is an important part of the culture and life in Norway",
+  "A cabin is a small holiday home in nature and many Norwegians own, rent or dispose of a cabin."
+  "Cabins can be in the mountains, by the sea, in the forest or on islands.",
   "Cabins can be old or new, large or small, simple or luxurious.",
   "The word 'hytte' comes from the old Norse word 'hýtti', which means 'small house'.",
   "The first evidence that Norwegians had cabins is from the 1100s.",
@@ -25,11 +24,8 @@ const translations2 = [
 ];
 
 
-
-const startTimes2=[5,9,15,19,29,36,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
+const startTimes2=[1,12,15,21,28,38,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
 const vocabulary2 = [
-  
-
 
   /* Cabin Culture */
   { word: 'hytte',              translation: 'cabin' },

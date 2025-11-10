@@ -1,42 +1,34 @@
-
-
 const translations7 = [
- "Lina hadde nylig flyttet til Norge og ønsket å forstå hvorfor nordmenn elsker å gå på tur.",
-"En venn anbefalte henne å bli med i Den Norske Turistforening (DNT), og hun meldte seg straks inn.",
-"Nå var det søndag, og Lina skulle delta på sin første DNT-tur.",
 
-"På møteplassen ble Lina møtt av en stor gruppe medlemmer i alle aldre.",
-"Turlederne, Kari og Per, ønsket alle velkommen og delte ut kart over ruten.",
-"\"I dag skal vi gå en lett tur til en av DNTs hytter,\" sa Kari.",
-"\"Det blir en flott dag i naturen.\"", 
-
-"Lina la merke til hvor organisert alt var.",
-"DNT-medlemmer får tilgang til et stort nettverk av merkede stier og over 500 hytter over hele Norge.",
-"I tillegg tilbyr DNT mange aktiviteter og turer for medlemmene, fra korte dagsturer til lengre ekspedisjoner.",
-
-"På turen begynte Lina å snakke med de andre deltakerne.",
-"De fortalte henne om de mange fordelene ved å være DNT-medlem.",
-"Ikke bare får man tilgang til fantastiske turmuligheter, men også til fellesskap og vennskap.",
-"DNT organiserer mange sosiale aktiviteter, som turer med guide, kurs og familiearrangementer.",
-
-"Da gruppen kom frem til hytta, ble Lina imponert over hvor koselig den var.",
-"Kari og Per begynte å forberede lunsj, og de andre hjalp til.",
-"Alle var glade og takknemlige for å dele denne opplevelsen.",
-"Kari fortalte Lina at DNT har over 300 000 medlemmer og er en av Norges største og eldste friluftsorganisasjoner.",
-
-"Lina følte seg inkludert og velkommen.",
-"Hun innså at DNT ikke bare handlet om å gå på tur, men også om å skape minner og fellesskap.",
-"Å være medlem av DNT ga henne muligheten til å oppleve Norges vakre natur på en trygg og hyggelig måte, samtidig som hun fikk nye venner.",
-
-"Da turen var over, takket Lina Kari og Per.",
-"\"Tusen takk for en fantastisk dag,\" sa hun.",
-"\"Jeg ser virkelig frem til neste tur med DNT.\""
-
+"Lina had recently moved to Norway and wanted to understand why Norwegians love going on hikes.", 
+"A friend recommended that she join the Norwegian Trekking Association (DNT), and she signed up immediately.", 
+"Now it was Sunday, and Lina was going to participate in her first DNT hike.", 
+"At the meeting place, Lina was met by a large group of members of all ages.", 
+"The tour leaders, Kari and Per, welcomed everyone and handed out maps of the route.",
+"\"Today we are going on an easy hike to one of DNT's cabins,\" said Kari.",
+"\"It will be a great day in nature.\"", 
+"Lina noticed how organized everything was.",
+"DNT members get access to a large network of marked trails and over 500 cabins all over Norway.", 
+"In addition, DNT offers many activities and tours for members, from short day trips to longer expeditions.",
+"On the hike, Lina started talking to the other participants.", 
+"They told her about the many benefits of being a DNT member.",
+"Not only do you get access to fantastic hiking opportunities, but also to community and friendship.", 
+"DNT organizes many social activities, such as guided tours, courses, and family events.",
+"When the group arrived at the cabin, Lina was impressed by how cozy it was.", 
+"Kari and Per started preparing lunch, and the others helped.", 
+"Everyone was happy and grateful to share this experience.",
+"Kari told Lina that DNT has over 300,000 members and is one of Norway's largest and oldest outdoor organizations.", 
+"Lina felt included and welcome.", 
+"She realized that DNT was not just about going on hikes, but also about creating memories and community.", 
+"Being a member of DNT gave her the opportunity to experience Norway's beautiful nature in a safe and pleasant way, while also making new friends.", 
+"When the hike was over, Lina thanked Kari and Per.", 
+"\"Thank you so much for a fantastic day,\" she said.", 
+"\"I really look forward to the next hike with DNT.\""
 ];
 
 
 
-const startTimes7=[5,9,15,19,29,36,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
+const startTimes7=[15,25,32,39,48,55,57,62,73,75,80,88,93,101,109,116,122,128,140,143,152,164,167,171,176];
 const vocabulary7 = [
   
 
