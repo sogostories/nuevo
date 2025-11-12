@@ -289,7 +289,7 @@ function clearHighlight4() {
 function handleTimeUpdate4() {
   if (wordMode4) return; // ignore in word mode
   const cur = audio4.currentTime;
-  const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes2[i + 1]));
+  const idx = startTimes4.findIndex((s, i) => cur >= s && (i === startTimes4.length - 1 || cur < startTimes4[i + 1]));
   if (idx !== -1 && idx !== readingIndex4) {
     clearHighlight4();
     segments4[idx].classList.add('highlight');
