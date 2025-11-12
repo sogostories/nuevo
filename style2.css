@@ -1,4 +1,5 @@
 /* ////////////////////// STORY 2 /////////////////////// */
+
 .dialog-2{
   display: none;
   position: fixed;
@@ -14,6 +15,7 @@
   max-height: 80vh;
   overflow-y: auto;
   }
+
   .controls-2 button,
   .vocab-btn-2,
   .word-btn-2 {

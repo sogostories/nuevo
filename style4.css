@@ -1,5 +1,5 @@
-/* ////////////////////// STORY 2 /////////////////////// */
-.dialog-4{
+/* ////////////////////// STORY 4 /////////////////////// */
+.dialog-4 {
   display: none;
   position: fixed;
   top: 50%;
@@ -13,6 +13,8 @@
   max-width: 900px; /*#650px*/
   max-height: 80vh;
   overflow-y: auto;
+  role: "dialog"; /* Added: Accessibility for screen readers */
+  aria-modal: "true"; /* Added: Indicates it's a modal */
 }
 
 .controls-4 button,
@@ -111,29 +113,34 @@
 .flash-exit-btn-4:hover {
   background: #5a6268;
 }
+
 #storyText4 .highlight {
   background: #fff3cd; /* soft yellow */
   transition: background .2s ease;
 }
 
+/* Floating translation toast - Fixed display and animation */
 .toast-4 {
+  display: none; /* Added: Base hide to prevent layout shifts */
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);  /* Match style2's opacity for consistency */
+  background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 10px 20px;  /* Match style2's padding */
+  padding: 10px 20px;
   border-radius: 8px;
   font-size: 14px;
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  max-width: 85%;  /* Keep your addition if needed */
-  text-align: center;  /* Keep your addition if needed */
+  max-width: 85%;
+  text-align: center;
 }
+
 .toast-4.show {
+  display: block; /* Added: Show with display for compatibility */
   opacity: 1;
   pointer-events: auto;
 }
@@ -143,4 +150,92 @@
     width:90vw; /* almost full-width */
     max-width:none; /* ignore the 650 px cap */
   }
+}
+
+/* Added missing styles from style.css (with adjustments for consistency) */
+.controls button,.vocab-btn,.word-btn {
+  margin:.5rem;
+  padding:.5rem 1rem;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.play-btn {
+  background:#28a745;
+  color:#fff;
+}
+.pause-btn {
+  background:#dc3545;
+  color:#fff;
+}
+.vocab-btn {
+  background:#ffc107;
+  color:#000;
+}
+.word-btn {
+  background:#17a2b8;
+  color:#fff;
+}
+.overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:999;
+}
+.highlight {
+  background:yellow;
+  transition:background .2s;
+}
+.toast {
+  position:fixed;
+  bottom:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.85);
+  color:#fff;
+  padding:1rem 1.2rem;
+  border-radius:8px;
+  display:none;
+  z-index:1100;
+}
+.flashcard {
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  margin-top:1rem;
+}
+.flashcard-content {
+  background:#fff3cd;
+  padding:1rem 2rem;
+  margin:1rem;
+  border-radius:10px;
+  cursor:pointer;
+  min-width:200px;
+  text-align:center;
+}
+.arrow-btn {
+  font-size:1.2rem;
+  background:#007bff;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:.4rem .8rem;
+  margin:0 .5rem;
+  cursor:pointer;
+}
+.dialog-close {
+  position:absolute;
+  top:8px;
+  right:12px;
+  background:transparent;
+  border:none;
+  font-size:1.8rem;
+  line-height:1;
+  cursor:pointer;
+  color:#888;
+}
+.dialog-close:hover {
+  color:#000;
 }
