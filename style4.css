@@ -116,24 +116,31 @@
   transition: background .2s ease;
 }
 
-/* Floating translation toast */
 .toast-4 {
-  display: none;
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0,0,0,.85);
-  color: #fff;
-  padding: .7rem 1rem;
+  background: rgba(0, 0, 0, 0.8);  /* Match style2's opacity for consistency */
+  color: white;
+  padding: 10px 20px;  /* Match style2's padding */
   border-radius: 8px;
-  max-width: 85%;
-  text-align: center;
-  z-index: 1100; /* above dialog(1000)/overlay(999) */
-  font-size: .95rem;
-}@media (max-width:600px){ /*600px*/
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  max-width: 85%;  /* Keep your addition if needed */
+  text-align: center;  /* Keep your addition if needed */
+}
+.toast-4.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width:900px){ /* Aligned breakpoint with style2 */
   .dialog-4{
-    width:90vw;          /* almost full-width */
-    max-width:none;      /* ignore the 650 px cap */
+    width:90vw; /* almost full-width */
+    max-width:none; /* ignore the 650 px cap */
   }
 }
