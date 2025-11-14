@@ -1,6 +1,6 @@
 /************** MODAL – STORY 2 HYTTA ****************/
 const translations2 = [
-  "A cabin is an important part of the culture and life in Norway",
+"A cabin is an important part of the culture and life in Norway",
 "A cabin is a small holiday home in nature and many Norwegians own, rent or dispose of a cabin.",
 "Cabins can be in the mountains, by the sea, in the forest or on islands.",
 "Cabins can be old or new, large or small, simple or luxurious.",
