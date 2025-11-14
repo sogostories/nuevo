@@ -1,3 +1,4 @@
+/************** MODAL – STORY 2 HYTTA ****************/
 const translations2 = [
   "A cabin is an important part of the culture and life in Norway",
 "A cabin is a small holiday home in nature and many Norwegians own, rent or dispose of a cabin.",
@@ -322,147 +323,161 @@ function clearHighlight2() {
 segments2.forEach(s => s.classList.remove('highlight'));
 }
 function handleTimeUpdate2() {
-if (wordMode2) return; // ignore in word mode
-const cur = audio2.currentTime;
-const idx = startTimes2.findIndex((s, i) => cur >= s && (i === startTimes2.length - 1 || cur < startTimes2[i + 1]));
-if (idx !== -1 && idx !== readingIndex2) {
-clearHighlight2();
-segments2[idx].classList.add('highlight');
-toast2.textContent = translations2[idx];
-toast2.classList.add('show');
-readingIndex2 = idx;
+  if (wordMode2) return; // ignore in word mode
+  const cur = audio2.currentTime;
+  const idx = startTimes2.findIndex((s, i) => cur >= s && (i === startTimes2.length - 1 || cur < startTimes2[i + 1]));
+  if (idx !== -1 && idx !== readingIndex2) {
+    clearHighlight2();
+    segments2[idx].classList.add('highlight');
+    toast2.textContent = translations2[idx];
+    toast2.classList.add('show');
+    readingIndex2 = idx;
+    }
   }
-}
 audio2.addEventListener('timeupdate', handleTimeUpdate2);
-audio2.addEventListener('ended', () => {
-clearHighlight2();
-toast2.classList.remove('show');
-readingIndex2 = 0;
-});
+audio.addEventListener('ended',()=>{clearHighlight2();toast.style.display='none';readingIndex=0});
+
 function playStory2() {
-exitWordMode2(); // exit word mode if active
-audio2.currentTime = startTimes2[readingIndex2];
-audio2.play();
-highlightCurrentSentence2(); // manually highlight on play
+  exitWordMode2(); // exit word mode if active
+  audio2.currentTime = startTimes2[readingIndex2];
+  audio2.play();
+  highlightCurrentSentence2(); // manually highlight on play
 }
+
 function highlightCurrentSentence2() {
-clearHighlight2();
-segments2[readingIndex2].classList.add('highlight');
-toast2.textContent = translations2[readingIndex2];
-toast2.classList.add('show');
-}
-function pauseStory2() {
-audio2.pause();
-toast2.classList.remove('show');
-clearHighlight2();
-}
+  clearHighlight2();
+    segments2[readingIndex2].classList.add('highlight');
+    toast2.textContent = translations2[readingIndex2];
+    toast2.style.display = 'block';
+  }
+
+function pauseStory2(){audio.pause();toast.style.display='none';clearHighlight2()}
+
+
 /************** SEGMENT CLICK – sentence playback (story2) ****************/
+/* ----------  CLICK-TO-READ SUPPORT ---------- */
 segments2.forEach((segment, idx) => {
-segment.style.cursor = 'pointer';
-segment.addEventListener('click', () => {
-readingIndex2 = idx;
-audio2.currentTime = startTimes2[idx];
-// Highlight immediately on click
-clearHighlight2();
-segments2[idx].classList.add('highlight');
-// Show translation immediately
-toast2.textContent = translations2[idx];
-toast2.classList.add('show');
-playStory2();
+  segment.style.cursor = 'pointer';
+  segment.addEventListener('click', () => {
+    readingIndex2 = idx;
+    audio2.currentTime = startTimes2[idx];
+
+    // Highlight immediately on click
+    clearHighlight2();
+    segments2[idx].classList.add('highlight');
+    // Show translation immediately
+    toast2.textContent = translations2[idx];
+    toast2.style.display = 'block';
+    playStory2();
   });
 });
+
+/**************  WORD MODE  ****************/
 function toggleWordMode2() {
-wordMode2 ? exitWordMode2() : enterWordMode2();
+  wordMode2 ? exitWordMode2() : enterWordMode2();
 }
 function enterWordMode2() {
-wordMode2 = true;
-wordBtn2.textContent = 'Exit Word Mode';
-pauseStory2();
-toast2.classList.remove('show');
+  wordMode2 = true;
+  wordBtn2.textContent = 'Exit Word Mode';
+  pauseStory2();
+  toast2.classList.remove('show');
 // wrap every word in each sentence with span.word
-segments2.forEach(seg => {
-const words = seg.textContent.split(/(\s+)/); // keep spaces
-seg.innerHTML = words.map(w => /\s+/.test(w) ? w : `<span class='word'>${w}</span>`).join('');
-seg.querySelectorAll('span.word').forEach(wspan => {
-wspan.style.cursor = 'pointer';
-wspan.addEventListener('click', wordClickHandler2);
+  segments2.forEach(seg => {
+    const words = seg.textContent.split(/(\s+)/); // keep spaces
+    seg.innerHTML = words.map(w => /\s+/.test(w) ? w : `<span class='word'>${w}</span>`).join('');
+    seg.querySelectorAll('span.word').forEach(wspan => {
+      wspan.style.cursor = 'pointer';
+      wspan.addEventListener('click', wordClickHandler2);
     });
   });
 }
+
+
 function exitWordMode2() {
-if (!wordMode2) return;
-wordMode2 = false;
-wordBtn2.textContent = 'Word Translation Mode';
-toast2.classList.remove('show');
-// restore original text (remove inner spans)
-segments2.forEach((seg, i) => {
-seg.textContent = seg.innerText;
-  });
-clearHighlight2();
+  if (!wordMode2) return;
+  wordMode2 = false;
+  wordBtn2.textContent = 'Word Translation Mode';
+  toast2.classList.remove('show');
+  // restore original text (remove inner spans)
+  segments2.forEach((seg,i)=>{seg.textContent=seg.innerText});
+  clearHighlight2();
 }
+
+
 function wordClickHandler2(e) {
-e.stopPropagation();
-clearHighlight2();
-const span = e.target;
-span.classList.add('highlight');
-// Clean the word and look up in vocabulary2
-const clean = span.textContent.toLowerCase().replace(/[^a-zæøåA-ZÆØÅ]/g, '');
-const entry = vocabulary2.find(v => v.word.toLowerCase() === clean);
-toast2.textContent = entry ? `${entry.word} = ${entry.translation}` : 'Translation not available';
-toast2.classList.add('show');
-// ▶️ Play the sentence that contains the clicked word
-const parentSegment = span.closest('span');
-const idx = segments2.indexOf(parentSegment);
-if (idx !== -1) {
-readingIndex2 = idx;
-audio2.currentTime = startTimes2[idx];
-audio2.play();
+  e.stopPropagation();
+  clearHighlight2();
+  const span = e.target;
+  span.classList.add('highlight');
+  // Clean the word and look up in vocabulary2
+  const clean = span.textContent.toLowerCase().replace(/[^a-zæøåA-ZÆØÅ]/g, '');
+  const entry = vocabulary2.find(v => v.word.toLowerCase() === clean);
+  toast2.textContent = entry ? `${entry.word} = ${entry.translation}` : 'Translation not available';
+  toast2.classList.add('show');
+  // ▶️ Play the sentence that contains the clicked word
+  const parentSegment = span.closest('span');
+  const idx = segments2.indexOf(parentSegment);
+  if (idx !== -1) {
+    readingIndex2 = idx;
+    audio2.currentTime = startTimes2[idx];
+    audio2.play();
   }
 }
+
+
 /************** FLASH‑CARD MODE – STORY 2 ****************/
 const flashcard2 = document.getElementById('flashcard-2');
 const flashcardContent2 = document.getElementById('flashcardContent-2');
 let currentWordIdx2 = 0;
+
 function startVocabMode2() {
 exitWordMode2(); // Make sure word mode is off
 flashcard2.style.display = 'flex';
 currentWordIdx2 = 0;
 updateFlashcard2();
 }
+
 function updateFlashcard2() {
 flashcardContent2.textContent = vocabulary2[currentWordIdx2].word;
 flashcardContent2.dataset.side = 'word';
 }
+
+
 function revealMeaning2() {
 if (flashcardContent2.dataset.side === 'word') {
-flashcardContent2.textContent = vocabulary2[currentWordIdx2].translation;
-flashcardContent2.dataset.side = 'translation';
-  } else {
-updateFlashcard2();
-  }
+  flashcardContent2.textContent = vocabulary2[currentWordIdx2].translation;
+  flashcardContent2.dataset.side = 'translation';
+    } else {
+  updateFlashcard2();
+    }
 }
+
+
 function nextWord2() {
-currentWordIdx2 = (currentWordIdx2 + 1) % vocabulary2.length;
-updateFlashcard2();
+  currentWordIdx2 = (currentWordIdx2 + 1) % vocabulary2.length;
+  updateFlashcard2();
 }
 function prevWord2() {
 currentWordIdx2 = (currentWordIdx2 - 1 + vocabulary2.length) % vocabulary2.length;
 updateFlashcard2();
 }
-function closeFlashcard2() {
-flashcard2.style.display = 'none';
-}
+
+function closeFlashcard2() {flashcard2.style.display = 'none';}
+
+
 /************** MODAL – STORY 2 ****************/
-function showDialog2() {
-document.getElementById('overlay-2').style.display = 'block';
+function showDialog2() {document.getElementById('overlay-2').style.display = 'block';
 document.getElementById('storyDialog-2').style.display = 'block';
 }
+
+
 function closeDialog2() {
-pauseStory2(); // stop audio & highlight
-exitWordMode2(); // reset word mode
-flashcard2.style.display = 'none';
-document.getElementById('overlay-2').style.display = 'none';
-document.getElementById('storyDialog-2').style.display = 'none';
+  pauseStory2(); // stop audio & highlight
+  exitWordMode2(); // reset word mode
+  flashcard2.style.display = 'none';
+  document.getElementById('flashcard-2').style.display = 'none';
+  document.getElementById('overlay-2').style.display = 'none';
+  document.getElementById('storyDialog-2').style.display = 'none';
 }
 // Close modal on backdrop click
 document.getElementById('overlay-2').addEventListener('click', closeDialog2);
