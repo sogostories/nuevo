@@ -404,6 +404,7 @@ function highlightCurrentSentence5() {
   toast5.style.display = 'block';
 }
 
+
 function pauseStory5() {
   audio5.pause();
   toast5.style.display = 'none';
@@ -423,10 +424,12 @@ segments5.forEach((segment, idx) => {
     // Show translation immediately
     toast5.textContent = translations5[idx];
     toast5.style.display = 'block';
-
     playStory5();
   });
 });
+
+
+/**************  WORD MODE  ****************/
 function toggleWordMode5() {
   wordMode5 ? exitWordMode5() : enterWordMode5();
 }
@@ -451,7 +454,7 @@ function exitWordMode5() {
   if (!wordMode5) return;
   wordMode5 = false;
   wordBtn5.textContent = 'Word Translation Mode';
-  toast5.style.display = 'none';
+  toast5.classList.remove('show'); 
 
   // restore original text (remove inner spans)
   segments5.forEach((seg, i) => {
@@ -460,10 +463,11 @@ function exitWordMode5() {
 
   clearHighlight5();
 }
+
+
 function wordClickHandler5(e) {
   e.stopPropagation();
   clearHighlight5();
-
   const span = e.target;
   span.classList.add('highlight');
 
@@ -482,6 +486,8 @@ function wordClickHandler5(e) {
     audio5.play();
   }
 }
+
+
 /**************  FLASH‑CARD MODE – STORY 5 ****************/
 const flashcard5 = document.getElementById('flashcard5');
 const flashcardContent5 = document.getElementById('flashcardContent5');
@@ -498,6 +504,7 @@ function updateFlashcard5() {
   flashcardContent5.textContent = vocabulary5[currentWordIdx5].word;
   flashcardContent5.dataset.side = 'word';
 }
+
 
 function revealMeaning5() {
   if (flashcardContent5.dataset.side === 'word') {
@@ -532,6 +539,7 @@ function closeDialog5() {
   pauseStory5();             // stop audio & highlight
   exitWordMode5();           // reset word mode
   flashcard5.style.display = 'none';
+  document.getElementById('flashcard5').style.display = 'none';
   document.getElementById('overlay5').style.display = 'none';
   document.getElementById('storyDialog5').style.display = 'none';
 }

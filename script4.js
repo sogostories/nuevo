@@ -310,11 +310,13 @@ const vocabulary2 = [
   { word: 'nyte', translation: 'and' },
   { word: 'dette.', translation: 'beautiful' }
   ];
+
+
 /************** DOM ****************/
 const segments2 = Array.from(document.querySelectorAll('#storyText2 span'));
-const toast2 = document.getElementById('toast-2');
-const audio2 = document.getElementById('storyAudio-2');
-const wordBtn2 = document.getElementById('wordModeBtn-2');
+const toast2 = document.getElementById('toast2');
+const audio2 = document.getElementById('storyAudio2');
+const wordBtn2 = document.getElementById('wordModeBtn2');
 /************** STATE ****************/
 let readingIndex2=0;
 let wordMode2=false;
@@ -335,7 +337,8 @@ function handleTimeUpdate2() {
     }
   }
 audio2.addEventListener('timeupdate', handleTimeUpdate2);
-audio.addEventListener('ended',()=>{clearHighlight2();toast.style.display='none';readingIndex=0});
+audio.addEventListener('ended',()=>{clearHighlight2();toast2.style.display='none';readingIndex=0});
+
 
 function playStory2() {
   exitWordMode2(); // exit word mode if active
@@ -351,7 +354,7 @@ function highlightCurrentSentence2() {
     toast2.style.display = 'block';
   }
 
-function pauseStory2(){audio.pause();toast.style.display='none';clearHighlight2()}
+function pauseStory2(){audio2.pause();toast2.style.display='none';clearHighlight2()}
 
 
 /************** SEGMENT CLICK – sentence playback (story2) ****************/
@@ -404,6 +407,7 @@ function exitWordMode2() {
 }
 
 
+
 function wordClickHandler2(e) {
   e.stopPropagation();
   clearHighlight2();
@@ -413,7 +417,7 @@ function wordClickHandler2(e) {
   const clean = span.textContent.toLowerCase().replace(/[^a-zæøåA-ZÆØÅ]/g, '');
   const entry = vocabulary2.find(v => v.word.toLowerCase() === clean);
   toast2.textContent = entry ? `${entry.word} = ${entry.translation}` : 'Translation not available';
-  toast2.classList.add('show');
+  toast2.style.display = 'block';
   // ▶️ Play the sentence that contains the clicked word
   const parentSegment = span.closest('span');
   const idx = segments2.indexOf(parentSegment);
@@ -426,15 +430,15 @@ function wordClickHandler2(e) {
 
 
 /************** FLASH‑CARD MODE – STORY 2 ****************/
-const flashcard2 = document.getElementById('flashcard-2');
-const flashcardContent2 = document.getElementById('flashcardContent-2');
+const flashcard2 = document.getElementById('flashcard2');
+const flashcardContent2 = document.getElementById('flashcardContent2');
 let currentWordIdx2 = 0;
 
 function startVocabMode2() {
-exitWordMode2(); // Make sure word mode is off
-flashcard2.style.display = 'flex';
-currentWordIdx2 = 0;
-updateFlashcard2();
+  exitWordMode2(); // Make sure word mode is off
+  flashcard2.style.display = 'flex';
+  currentWordIdx2 = 0;
+  updateFlashcard2();
 }
 
 function updateFlashcard2() {
@@ -466,8 +470,8 @@ function closeFlashcard2() {flashcard2.style.display = 'none';}
 
 
 /************** MODAL – STORY 2 ****************/
-function showDialog2() {document.getElementById('overlay-2').style.display = 'block';
-document.getElementById('storyDialog-2').style.display = 'block';
+function showDialog2() {document.getElementById('overlay2').style.display = 'block';
+document.getElementById('storyDialog2').style.display = 'block';
 }
 
 
@@ -475,9 +479,9 @@ function closeDialog2() {
   pauseStory2(); // stop audio & highlight
   exitWordMode2(); // reset word mode
   flashcard2.style.display = 'none';
-  document.getElementById('flashcard-2').style.display = 'none';
-  document.getElementById('overlay-2').style.display = 'none';
-  document.getElementById('storyDialog-2').style.display = 'none';
+  document.getElementById('flashcard2').style.display = 'none';
+  document.getElementById('overlay2').style.display = 'none';
+  document.getElementById('storyDialog2').style.display = 'none';
 }
 // Close modal on backdrop click
-document.getElementById('overlay-2').addEventListener('click', closeDialog2);
+document.getElementById('overlay2').addEventListener('click', closeDialog2);

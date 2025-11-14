@@ -358,6 +358,7 @@ const wordBtn6 = document.getElementById('wordModeBtn6');
 /**************  STATE  ****************/ 
 let readingIndex6=0;
 let wordMode6=false;
+
 /**************  AUDIO PLAYBACK (variable6)  ****************/ 
 function clearHighlight6() {
   segments6.forEach(s => s.classList.remove('highlight'));
@@ -388,6 +389,7 @@ function playStory6() {
   audio6.play();
   highlightCurrentSentence6(); // manually highlight on play
 }
+
 function highlightCurrentSentence6() {
   clearHighlight6();
   segments6[readingIndex6].classList.add('highlight');
@@ -418,6 +420,8 @@ segments6.forEach((segment, idx) => {
     playStory6();
   });
 });
+
+/**************  WORD MODE  ****************/
 function toggleWordMode6() {
   wordMode6 ? exitWordMode6() : enterWordMode6();
 }
@@ -426,7 +430,7 @@ function enterWordMode6() {
   wordMode6 = true;
   wordBtn6.textContent = 'Exit Word Mode';
   pauseStory6();
-  toast6.style.display = 'none';
+  toast6.classList.remove('show'); 
 
   // wrap every word in each sentence with span.word
   segments6.forEach(seg => {
@@ -438,12 +442,13 @@ function enterWordMode6() {
     });
   });
 }
+
+
 function exitWordMode6() {
   if (!wordMode6) return;
   wordMode6 = false;
   wordBtn6.textContent = 'Word Translation Mode';
-  toast6.style.display = 'none';
-
+  toast6.classList.remove('show');
   // restore original text (remove inner spans)
   segments6.forEach((seg, i) => {
     seg.textContent = seg.innerText;
@@ -451,6 +456,10 @@ function exitWordMode6() {
 
   clearHighlight6();
 }
+
+
+
+
 function wordClickHandler6(e) {
   e.stopPropagation();
   clearHighlight6();
@@ -523,6 +532,7 @@ function closeDialog6() {
   pauseStory6();             // stop audio & highlight
   exitWordMode6();           // reset word mode
   flashcard6.style.display = 'none';
+  document.getElementById('flashcard6').style.display = 'none';
   document.getElementById('overlay6').style.display = 'none';
   document.getElementById('storyDialog6').style.display = 'none';
 }

@@ -416,6 +416,8 @@ segments7.forEach((segment, idx) => {
     playStory7();
   });
 });
+
+/**************  WORD MODE  ****************/
 function toggleWordMode7() {
   wordMode7 ? exitWordMode7() : enterWordMode7();
 }
@@ -436,6 +438,8 @@ function enterWordMode7() {
     });
   });
 }
+
+
 function exitWordMode7() {
   if (!wordMode7) return;
   wordMode7 = false;
@@ -449,10 +453,13 @@ function exitWordMode7() {
 
   clearHighlight7();
 }
+
+
+
+
 function wordClickHandler7(e) {
   e.stopPropagation();
   clearHighlight7();
-
   const span = e.target;
   span.classList.add('highlight');
 
@@ -461,7 +468,6 @@ function wordClickHandler7(e) {
   const entry = vocabulary7.find(v => v.word.toLowerCase() === clean);
   toast7.textContent = entry ? `${entry.word} = ${entry.translation}` : 'Translation not available';
   toast7.style.display = 'block';
-
   // ▶️ Play the sentence that contains the clicked word
   const parentSegment = span.closest('span');
   const idx = segments7.indexOf(parentSegment);
@@ -482,6 +488,7 @@ function startVocabMode7() {
   currentWordIdx7 = 0;
   updateFlashcard7();
 }
+
 
 function updateFlashcard7() {
   flashcardContent7.textContent = vocabulary7[currentWordIdx7].word;
@@ -521,6 +528,7 @@ function closeDialog7() {
   pauseStory7();             // stop audio & highlight
   exitWordMode7();           // reset word mode
   flashcard7.style.display = 'none';
+  document.getElementById('flashcard7').style.display = 'none';
   document.getElementById('overlay7').style.display = 'none';
   document.getElementById('storyDialog7').style.display = 'none';
 }

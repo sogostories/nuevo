@@ -305,18 +305,24 @@ audio4.addEventListener('ended', () => {
   readingIndex4 = 0;
 });
 
+
+
+
 function playStory4() {
   exitWordMode4(); // exit word mode if active
   audio4.currentTime = startTimes4[readingIndex4];
   audio4.play();
   highlightCurrentSentence4(); // manually highlight on play
 }
+
+
 function highlightCurrentSentence4() {
   clearHighlight4();
   segments4[readingIndex4].classList.add('highlight');
   toast4.textContent = translations4[readingIndex4];
   toast4.style.display = 'block';
 }
+
 
 function pauseStory4() {
   audio4.pause();
@@ -337,10 +343,13 @@ segments4.forEach((segment, idx) => {
     // Show translation immediately
     toast4.textContent = translations4[idx];
     toast4.style.display = 'block';
-
     playStory4();
   });
 });
+
+
+
+/**************  WORD MODE  ****************/
 function toggleWordMode4() {
   wordMode4 ? exitWordMode4() : enterWordMode4();
 }
@@ -349,7 +358,8 @@ function enterWordMode4() {
   wordMode4 = true;
   wordBtn4.textContent = 'Exit Word Mode';
   pauseStory4();
-  toast4.style.display = 'none';
+  toast4.classList.remove('show');
+
 
   // wrap every word in each sentence with span.word
   segments4.forEach(seg => {
@@ -361,11 +371,14 @@ function enterWordMode4() {
     });
   });
 }
+
+
+
 function exitWordMode4() {
   if (!wordMode4) return;
   wordMode4 = false;
   wordBtn4.textContent = 'Word Translation Mode';
-  toast4.style.display = 'none';
+  toast4.classList.remove('show');
 
   // restore original text (remove inner spans)
   segments4.forEach((seg, i) => {
@@ -374,6 +387,9 @@ function exitWordMode4() {
 
   clearHighlight4();
 }
+
+
+
 function wordClickHandler4(e) {
   e.stopPropagation();
   clearHighlight4();
@@ -396,6 +412,8 @@ function wordClickHandler4(e) {
     audio4.play();
   }
 }
+
+
 /**************  FLASH‑CARD MODE – STORY 4 ****************/
 const flashcard4 = document.getElementById('flashcard4');
 const flashcardContent4 = document.getElementById('flashcardContent4');
@@ -417,9 +435,9 @@ function revealMeaning4() {
   if (flashcardContent4.dataset.side === 'word') {
     flashcardContent4.textContent = vocabulary4[currentWordIdx4].translation;
     flashcardContent4.dataset.side = 'translation';
-  } else {
-    updateFlashcard4();
-  }
+    } else {
+      updateFlashcard4();
+    }
 }
 
 function nextWord4() {
@@ -431,6 +449,8 @@ function prevWord4() {
   currentWordIdx4 = (currentWordIdx4 - 1 + vocabulary4.length) % vocabulary4.length;
   updateFlashcard4();
 }
+
+
 
 function closeFlashcard4() {
   flashcard4.style.display = 'none';
@@ -445,7 +465,7 @@ function showDialog4() {
 function closeDialog4() {
   pauseStory4();             // stop audio & highlight
   exitWordMode4();           // reset word mode
-  flashcard4.style.display = 'none';
+  document.getElementById('flashcard4').style.display = 'none';
   document.getElementById('overlay4').style.display = 'none';
   document.getElementById('storyDialog4').style.display = 'none';
 }
