@@ -1,18 +1,96 @@
+/* style7.css */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.nav-toggle span {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .dialog-3, [class^="dialog-3"] {
+    width: 90vw; /* Almost full-width on smaller screens */
+    max-width: none;
+    padding: 1.5rem; /* Slightly less padding to fit mobile */
+  }
+  #storyText3, [id^="storyText3"] {
+    font-size: 1rem; /* Standard on small screens */
+  }
+}
+@media (min-width: 901px) and (max-width: 1199px) {
+  .dialog-3, [class^="dialog-3"] {
+    max-width: 900px; /* Balanced width for mid-sized windows */
+    width: 85%;
+  }
+}
+
+
+
 /* ////////////////////// STORY 2 /////////////////////// */
 .dialog-3{
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-  border-radius: 12px;
-  z-index: 1000;
-  max-width: 650px;
-  max-height: 80vh;
-  overflow-y: auto;
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#fff;
+  padding: 2rem 3rem; /* Increased side padding for more space */
+  box-shadow:0 0 10px rgba(0,0,0,.25);
+  border-radius:12px;
+  z-index:1000;
+  max-width:1200px;
+  width: 90%; /* Fluid to window size */
+  max-height:80vh;
+  overflow-y:auto;
 }
 
 .controls-3 button,
@@ -53,6 +131,9 @@
   background: rgba(0, 0, 0, .6);
   z-index: 999;
 }
+
+.highlight{background:yellow;transition:background .2s}
+.toast-3{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:1rem 1.2rem;border-radius:8px;display:none;z-index:1100}
 
 .flashcard-3 {
   display: none;
@@ -111,29 +192,20 @@
 .flash-exit-btn-3:hover {
   background: #5a6268;
 }
-#storyText3 .highlight {
-  background: #fff3cd; /* soft yellow */
-  transition: background .2s ease;
+
+ 
+.form-container {
+  position: relative;
+  width: 100%;
+  padding-top: 130%; /* controls aspect ratio (like 4:3 or 16:9) */
+  overflow: hidden;
 }
-@media (max-width:600px){
-  .dialog-3{
-    width:90vw;          /* almost full-width */
-    max-width:none;      /* ignore the 650 px cap */
-  }
-}
-/* Floating translation toast */
-.toast-3 {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,.85);
-  color: #fff;
-  padding: .7rem 1rem;
-  border-radius: 8px;
-  max-width: 85%;
-  text-align: center;
-  z-index: 1100; /* above dialog(1000)/overlay(999) */
-  font-size: .95rem;
+
+.form-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
