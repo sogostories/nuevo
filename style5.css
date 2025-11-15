@@ -6,11 +6,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  padding: 2rem;
+  padding: 2rem 3rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, .25);
   border-radius: 12px;
   z-index: 1000;
-  max-width: 900px;/*#650px*/
+  max-width:1200px;
+  width: 90%; /* Fluid to window size */
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -61,6 +62,8 @@
   margin-top: 1rem;
 }
 
+.highlight{background:yellow;transition:background .2s}
+.toast-5{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:1rem 1.2rem;border-radius:8px;display:none;z-index:1100}
 .flashcard-content-5 {
   background: #fff3cd;
   padding: 1rem 2rem;
@@ -70,6 +73,7 @@
   min-width: 200px;
   text-align: center;
 }
+
 
 .arrow-btn-5 {
   font-size: 1.2rem;
@@ -81,6 +85,9 @@
   margin: 0 .5rem;
   cursor: pointer;
 }
+
+
+
 
 .dialog-close-5 {
   position: absolute;
@@ -94,46 +101,26 @@
   color: #888;
 }
 
-.dialog-close-5:hover {
-  color: #000;
+.dialog-close-5:hover{color:#000}
+.flash-exit-btn-5{
+  margin-top:.8rem;background:#6c757d;color:#fff;
+  border:none;padding:.4rem .9rem;border-radius:6px;cursor:pointer;
 }
 
-.flash-exit-btn-5 {
-  margin-top: .8rem;
-  background: #6c757d;
-  color: #fff;
+.flash-exit-btn-5:hover{background:#5a6268}
+
+.form-container {
+  position: relative;
+  width: 100%;
+  padding-top: 130%; /* controls aspect ratio (like 4:3 or 16:9) */
+  overflow: hidden;
+}
+
+.form-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
-  padding: .4rem .9rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.flash-exit-btn-5:hover {
-  background: #5a6268;
-}
-#storyText5 .highlight {
-  background: #fff3cd; /* soft yellow */
-  transition: background .2s ease;
-}
-
-/* Floating translation toast */
-.toast-5 {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,.85);
-  color: #fff;
-  padding: .7rem 1rem;
-  border-radius: 8px;
-  max-width: 85%;
-  text-align: center;
-  z-index: 1100; /* above dialog(1000)/overlay(999) */
-  font-size: .95rem;
-}@media (max-width:900px){ /*#600px*/
-  .dialog-5{
-    width:90vw;          /* almost full-width */
-    max-width:none;      /* ignore the 650 px cap */
-  }
 }
