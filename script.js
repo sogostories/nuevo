@@ -32,7 +32,7 @@ const translations=[
  "May 17 is truly a special day in Norway, a day we never forget."
 ];
 
-const startTimes=[5,9,16,19,29,36,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,157,160.5,165,172,178,182];
+const startTimes=[5,9,16,19,29,37,42,52.5,63,75,80,87,93,98,102,105,110,117,122,127,133,139,142,146,151,157,160.5,165,172,178,182];
 
 const vocabulary = [
   /* numbers & dates */
