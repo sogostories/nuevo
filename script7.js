@@ -1,5 +1,4 @@
 const translations7 = [
-
 "Lina had recently moved to Norway and wanted to understand why Norwegians love going on hikes.", 
 "A friend recommended that she join the Norwegian Trekking Association (DNT), and she signed up immediately.", 
 "Now it was Sunday, and Lina was going to participate in her first DNT hike.", 
@@ -26,7 +25,8 @@ const translations7 = [
 "\"I really look forward to the next hike with DNT.\""
 ];
 
-const startTimes7=[15,25,32,39,48,55,57,62,73,75,80,88,93,101,109,116,122,128,140,143,152,164,167,171,176];
+
+const startTimes7=[0,15,25,32,39,48,55,57,62,73,75,80,88,93,101,109,116,122,128,140,143,152,164,167,171,176];
 const vocabulary7 = [
   { word: 'Lina', translation: 'Lina' },
   { word: 'hadde', translation: 'had' },
