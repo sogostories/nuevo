@@ -26,7 +26,7 @@ const translations7 = [
 ];
 
 
-const startTimes7=[0,15,25,32,39,48,55,57,62,73,75,80,88,93,101,109,116,122,128,140,143,152,164,167,171,176];
+const startTimes7=[1,15,25,32,39,48,55,57,62,73,75,80,88,93,101,109,116,122,128,140,143,152,164,167,171,176];
 const vocabulary7 = [
   { word: 'Lina', translation: 'Lina' },
   { word: 'hadde', translation: 'had' },
