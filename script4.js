@@ -17,7 +17,7 @@ const translations2 = [
   "At the office, fewer people therefore show up on Fridays,",
   "and many leave work early so they can avoid queues on the way to the cabin.",
   "Many Norwegians also go on cabin trips during holidays such as Easter, Christmas, and 17 May.",
-  "They go on cabin trips both in summer and winter.",
+  "They go  on cabin trips both in summer and winter.",
   "When Norwegians are on a cabin trip, they often engage in various activities.",
   "They go hiking in nature, fish, swim, cycle, play games, read books, and cook food.",
   "A cabin also requires a lot of maintenance, so much time is spent painting, chopping firewood, and repairing whatever needs fixing.",
@@ -27,7 +27,7 @@ const translations2 = [
   "The cabin is a symbol of the Norwegian people and their values.",
   "In Norway there are many mountains and beautiful nature, so the cabins provide an opportunity to enjoy this."
 ];
-const startTimes2=[1,12,15,21,28,38,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133];
+const startTimes2=[1,12,21.4,28,37.6,42.3,52.8,60,65,70,75,81,87,92.3,96,108,105,110,115.4,119, 125,134,144,152.8,161,167,172 ];
 const vocabulary2 = [
   { word: 'En', translation: 'A' },
   { word: 'hytte', translation: 'cabin' },
