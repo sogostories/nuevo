@@ -24,7 +24,7 @@ const translations4 = [
 "His life and actions are an important part of Norwegian history and cultural heritage."
 ];
 
-const startTimes4=[1,19,29.5,38,48,54,64,70,76.7,82,88,95,100,108,118,122, 129, 135, 142,149,160];
+const startTimes4=[1,19,29.5,38,48,54,64,70,77.1,82,88,95,100,108,118,122, 129, 135, 142,149];
 const vocabulary4 = [
   { word: 'Kong', translation: 'King' },
   { word: 'Olav', translation: 'Olav' },
