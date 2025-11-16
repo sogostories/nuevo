@@ -1,35 +1,33 @@
-
-
 const translations3 = [
+  "Norway is known for its strong skiing tradition, and you often hear the expression 'Norwegians are born with skis on their feet'.",
   "Historically, skis have been an important means of transportation in Norway.",
-"The rock carving “Bølamannen” in the Trondheim Fjord is about 6000 years old and shows a man on skis.",
-"To get through the harsh Norwegian wilderness with forests and lakes, skis were used as practical tools for hunting, transport, and survival.",
-"The first skis were made of wood, and had a simple shape – long, narrow planks with raised tips.",
-"Skiing has therefore been part of Norwegian cultural heritage long before modern ski resorts and groomed trails.",
-"In the 1800s, skis began to be used as a sport in Norway.",
-"Since then, skiing has developed a lot, and Norway has definitely become one of the world’s leading nations on the ski track.",
-"Norway has won many medals in international competitions such as World Championships and the Olympics.",
-"This has also made skiing so popular.",
-"It is not only because of the gold medals that skiing has become popular.",
-"It is also because Norway has a varied and beautiful winter landscape.",
-"Today it is common to see Norwegians in the mountains.",
-"Many spend weekends and holidays in the mountains to go skiing.",
-"In addition, it can be said that Norwegians have a strong tradition of using nature for recreation, and skiing is therefore a perfect way to do this in winter.",
-"Skiing is for everyone, both children and adults, athletes and ordinary hikers.",
-"It is common to go skiing with the family, and then enjoy a break with a cup of hot cocoa.",
-"Children also learn to ski at an early age through ski days at school.",
-"Just remember not to walk in the ski track, as skiers can get angry.",
-"But, are Norwegians really born with skis on their feet?",
-"Even though this is a funny cliché, Norwegians are not literally born with skis on their feet.",
-"Some love it, while others would rather be on a beach in the south when winter comes.",
-"What is certain is that skiing is an important part of Norwegian identity and culture, and that as a skiing nation Norway has a deep love for snow, nature, and community.",
-"The joy of skiing lasts a lifetime."
-
-];
-
+  "The rock carving 'Bølamannen' in the Trondheim Fjord is about 6000 years old and shows a man on skis.",
+  "To get through the harsh Norwegian wilderness with forests and lakes, skis were used as practical tools for hunting, transport, and survival.",
+  "The first skis were made of wood, and had a simple shape – long, narrow planks with raised tips.",
+  "Skiing has therefore been part of Norwegian cultural heritage long before modern ski resorts and groomed trails.",
+  "In the 1800s, skis began to be used as a sport in Norway.",
+  "Since then, skiing has developed a lot, and Norway has definitely become one of the world’s leading nations on the ski track.",
+  "Norway has won many medals in international competitions such as World Championships and the Olympics.",
+  "This has also made skiing so popular.",
+  "It is not only because of the gold medals that skiing has become popular.",
+  "It is also because Norway has a varied and beautiful winter landscape.",
+  "Today it is common to see Norwegians in the mountains.",
+  "Many spend weekends and holidays in the mountains to go skiing.",
+  "In addition, it can be said that Norwegians have a strong tradition of using nature for recreation, and skiing is therefore a perfect way to do this in winter.",
+  "Skiing is for everyone, both children and adults, athletes and ordinary hikers.",
+  "It is common to go skiing with the family, and then enjoy a break with a cup of hot cocoa.",
+  "Children also learn to ski at an early age through ski days at school.",
+  "Just remember not to walk in the ski track, as skiers can get angry.",
+  "But, are Norwegians really born with skis on their feet?",
+  "Even though this is a funny cliché, Norwegians are not literally born with skis on their feet.",
+  "Some love it, while others would rather be on a beach in the south when winter comes.",
+  "What is certain is that skiing is an important part of Norwegian identity and culture, and that as a skiing nation Norway has a deep love for snow, nature, and community.",
+  "The joy of skiing lasts a lifetime....."
+  ];
 
 
-const startTimes3=[5,9,15,19,29,36,42,52,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
+
+const startTimes3=[0.5,13,18,26, 38, 47, 56,61, 71,78,82,88,94, 99,103, 115,121.8,129, 134,140,145,152 ,160,176,           ,62,75,79,87,93,98,102,105,110,117,122,127,133,139,142,146,151,156,160,164,172,177,182];
 const vocabulary3 = [
   /* Ski Culture */
   { word: '1800', translation: '1800' },
