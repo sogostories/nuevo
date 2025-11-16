@@ -26,7 +26,7 @@ const translations2 = [
   "The cabin is a symbol of the Norwegian people and their values.",
   "In Norway there are many mountains and beautiful nature, so the cabins provide an opportunity to enjoy this."
 ];
-const startTimes2=[12,21.4,28,37.6,42.3,52.8,60,65,70,75,81,87,92.3,96,108,105,110,115.4,119, 125,134,144,152.8,161,167,172 ];
+const startTimes2=[12,21.4,28,37.6,42.3,52.8,60,65,70,75,81,87,92.3,96,108,115.4,119, 125,134,144,152.8,161,167,172 ];
 const vocabulary2 = [
   { word: 'En', translation: 'A' },
   { word: 'hytte', translation: 'cabin' },
