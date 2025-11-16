@@ -1,5 +1,5 @@
 const translations5 = [
-"The Oil that Changed Norway:", 
+"The Oil that Changed Norway", 
 "Pavlo lives in Stavanger.", 
 "He came to Norway a year ago and now works at a shipyard.", 
 "There they build parts for oil platforms.", 
@@ -49,7 +49,7 @@ const translations5 = [
 ];
 
 
-const startTimes5=[9,14,19,23,28,32,35,37,40,44,48,53,57,63,70,72,76,78,82,85,88,92, 95, 100, 103, 108,111,113,116,120,122,126,130,133,137,141,146,148,151,154,157,161,165,168,170,177,179,181];
+const startTimes5=[8,11,14,20,23,28,32.8,36,37.3, 40,45, 49,53, 57, 63, 69, 72, 76,78, 82, 85,88.5 , 92, 95, 100, 103, 108, 111,113,116, 120, 122,126, 130, 134, 137, 141.5, 146, 148,151 ,155,157,161,166,167, 171, 177, 178];
 const vocabulary5 = [
   { word: 'Oljen', translation: 'The oil' },
   { word: 'som', translation: 'that' },
